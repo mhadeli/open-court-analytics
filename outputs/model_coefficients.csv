@@ -1,0 +1,26 @@
+model,term,estimate_log_scale,ratio_hr_or,ci_lower_95,ci_upper_95,p_value,n_obs,notes
+cox_ph_time_to_disposition,batch_efiler,-0.0982,0.9065,0.8797,0.9342,0.0,51948,County-stratified Cox PH; Concordance=0.538; ref=Failure to Pay Rent
+cox_ph_time_to_disposition,cat_Breach of Lease,0.0401,1.0409,0.8951,1.2104,0.60291,51948,County-stratified Cox PH; Concordance=0.538; ref=Failure to Pay Rent
+cox_ph_time_to_disposition,cat_Public Housing FTPR,-0.3168,0.7285,0.598,0.8875,0.00166,51948,County-stratified Cox PH; Concordance=0.538; ref=Failure to Pay Rent
+cox_ph_time_to_disposition,cat_Tenant Holding Over,-0.0291,0.9713,0.8824,1.0692,0.5522,51948,County-stratified Cox PH; Concordance=0.538; ref=Failure to Pay Rent
+cox_ph_time_to_disposition,cat_Wrongful Detainer,0.1483,1.1598,1.0502,1.281,0.00344,51948,County-stratified Cox PH; Concordance=0.538; ref=Failure to Pay Rent
+logit_eviction_executed_full,Intercept,1.2331,3.4317,2.7328,4.3094,0.0,51500,"Pseudo-R2=0.118; county-clustered SEs (15 counties, county & month FEs included)"
+logit_eviction_executed_full,"C(case_category, Treatment(reference='Failure to Pay Rent'))[T.Breach of Lease]",1.5512,4.7173,2.9767,7.4757,0.0,51500,"Pseudo-R2=0.118; county-clustered SEs (15 counties, county & month FEs included)"
+logit_eviction_executed_full,"C(case_category, Treatment(reference='Failure to Pay Rent'))[T.Public Housing FTPR]",-0.3157,0.7293,0.5974,0.8903,0.00192,51500,"Pseudo-R2=0.118; county-clustered SEs (15 counties, county & month FEs included)"
+logit_eviction_executed_full,"C(case_category, Treatment(reference='Failure to Pay Rent'))[T.Tenant Holding Over]",1.036,2.8178,1.6533,4.8026,0.00014,51500,"Pseudo-R2=0.118; county-clustered SEs (15 counties, county & month FEs included)"
+logit_eviction_executed_full,"C(case_category, Treatment(reference='Failure to Pay Rent'))[T.Wrongful Detainer]",1.7941,6.0141,2.9806,12.1347,0.0,51500,"Pseudo-R2=0.118; county-clustered SEs (15 counties, county & month FEs included)"
+logit_eviction_executed_full,C(filing_month_str)[T.2026-05],-0.1871,0.8293,0.6619,1.0391,0.1039,51500,"Pseudo-R2=0.118; county-clustered SEs (15 counties, county & month FEs included)"
+logit_eviction_executed_full,C(filing_month_str)[T.2026-06],-0.0984,0.9063,0.7818,1.0506,0.19201,51500,"Pseudo-R2=0.118; county-clustered SEs (15 counties, county & month FEs included)"
+logit_eviction_executed_full,C(filing_month_str)[T.2026-07],-0.2726,0.7614,0.6486,0.8939,0.00087,51500,"Pseudo-R2=0.118; county-clustered SEs (15 counties, county & month FEs included)"
+logit_eviction_executed_full,C(filing_month_str)[T.2026-08],-1.0966,0.334,0.1997,0.5586,3e-05,51500,"Pseudo-R2=0.118; county-clustered SEs (15 counties, county & month FEs included)"
+logit_eviction_executed_full,C(filing_month_str)[T.2026-09],-2.9778,0.0509,0.021,0.1236,0.0,51500,"Pseudo-R2=0.118; county-clustered SEs (15 counties, county & month FEs included)"
+logit_eviction_executed_full,batch_efiler,-0.5462,0.5792,0.5181,0.6474,0.0,51500,"Pseudo-R2=0.118; county-clustered SEs (15 counties, county & month FEs included)"
+logit_eviction_mature_60d_cohort,Intercept,-1.9795,0.1381,0.1109,0.1722,0.0,31451,"Pseudo-R2=0.051; county-clustered SEs (13 counties, county & month FEs included)"
+logit_eviction_mature_60d_cohort,"C(case_category, Treatment(reference='Failure to Pay Rent'))[T.Breach of Lease]",1.6283,5.0952,3.1923,8.1323,0.0,31451,"Pseudo-R2=0.051; county-clustered SEs (13 counties, county & month FEs included)"
+logit_eviction_mature_60d_cohort,"C(case_category, Treatment(reference='Failure to Pay Rent'))[T.Public Housing FTPR]",-0.2507,0.7782,0.705,0.859,0.0,31451,"Pseudo-R2=0.051; county-clustered SEs (13 counties, county & month FEs included)"
+logit_eviction_mature_60d_cohort,"C(case_category, Treatment(reference='Failure to Pay Rent'))[T.Tenant Holding Over]",0.9802,2.665,1.5487,4.586,0.0004,31451,"Pseudo-R2=0.051; county-clustered SEs (13 counties, county & month FEs included)"
+logit_eviction_mature_60d_cohort,"C(case_category, Treatment(reference='Failure to Pay Rent'))[T.Wrongful Detainer]",1.8739,6.5136,3.0823,13.7647,0.0,31451,"Pseudo-R2=0.051; county-clustered SEs (13 counties, county & month FEs included)"
+logit_eviction_mature_60d_cohort,C(filing_month_str)[T.2026-05],-0.1699,0.8437,0.6738,1.0565,0.13867,31451,"Pseudo-R2=0.051; county-clustered SEs (13 counties, county & month FEs included)"
+logit_eviction_mature_60d_cohort,C(filing_month_str)[T.2026-06],-0.0865,0.9171,0.7933,1.0602,0.24227,31451,"Pseudo-R2=0.051; county-clustered SEs (13 counties, county & month FEs included)"
+logit_eviction_mature_60d_cohort,C(filing_month_str)[T.2026-07],-0.2641,0.7679,0.6477,0.9104,0.00236,31451,"Pseudo-R2=0.051; county-clustered SEs (13 counties, county & month FEs included)"
+logit_eviction_mature_60d_cohort,batch_efiler,-0.5124,0.599,0.5172,0.6939,0.0,31451,"Pseudo-R2=0.051; county-clustered SEs (13 counties, county & month FEs included)"
