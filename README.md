@@ -14,9 +14,9 @@ Reproducible Python and SQL pipeline for state court case processing analytics, 
 ## Quickstart
 
 ```bash
-# Activate the uv virtual environment
-source .venv/bin/activate
-
-# Install project dependencies
+# Create the environment and install dependencies (incl. the spaCy model)
 uv sync
+
+# Run any script inside the environment
+uv run python src/db/build_warehouse.py
 ```
