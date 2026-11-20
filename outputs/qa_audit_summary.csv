@@ -1,0 +1,10 @@
+metric,value,notes
+raw_event_rows,100000,Total raw event records ingested
+messy_case_numbers_cleaned,7,Rows with internal whitespace normalized in casenumber
+distinct_cases_raw,71673,Unique normalized case_id values in nods_cases
+unmapped_jurisdiction_rows,0,Cases missing valid Maryland county FIPS (must be 0)
+left_truncated_no_petition,19716,Cases with warrant return only (petition predated extract window)
+impossible_date_cases,9,Cases where disposition_date < filing_date (excluded from v_analyst_cases)
+analyst_cohort_cases,51948,Valid petition-cohort cases exposed in v_analyst_cases
+right_censored_open_cases,27542,Open cases in v_analyst_cases right-censored at extract cutoff
+suppressed_county_category_cells,38,County-category cells suppressed under < 10 threshold
