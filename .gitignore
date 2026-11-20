@@ -1,0 +1,33 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Environment & secrets
+.env
+.env.*
+
+# Raw & processed large data artifacts
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*.duckdb
+data/processed/*.duckdb.wal
+data/processed/*.sqlite
+data/processed/*.db
+data/processed/*.parquet
+
+# Quarto & Jupyter artifacts
+.ipynb_checkpoints/
+*_files/
+
+# OS & editor files
+.DS_Store
+.vscode/
+.idea/
