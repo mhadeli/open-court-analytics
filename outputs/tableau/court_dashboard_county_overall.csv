@@ -1,25 +1,25 @@
-jurisdiction_fips,county_name,region,is_suppressed,total_cases,closed_cases,evicted_cases,clearance_rate_pct,eviction_rate_pct,batch_efiler_pct,median_days_closed,pct_disposed_within_30d,pct_disposed_within_60d,pct_disposed_within_90d
-24001,Allegany County,Western,False,151,130.0,90.0,86.09,59.6,0.0,12.0,90.77,95.38,100.0
-24003,Anne Arundel County,Central,False,3478,1419.0,212.0,40.8,6.1,69.58,55.0,14.94,55.39,94.64
-24510,Baltimore City,Central,False,14745,1258.0,1197.0,8.53,8.12,51.48,54.0,4.05,68.12,97.14
-24005,Baltimore County,Central,False,15306,10117.0,1119.0,66.1,7.31,83.42,46.0,18.86,69.57,98.82
-24009,Calvert County,Southern,False,84,66.0,18.0,78.57,21.43,16.67,21.5,75.76,93.94,98.48
-24011,Caroline County,Eastern Shore,False,39,30.0,12.0,76.92,30.77,12.82,17.5,90.0,93.33,100.0
-24013,Carroll County,Central,False,97,86.0,27.0,88.66,27.84,21.65,18.0,88.37,98.84,100.0
-24015,Cecil County,Eastern Shore,False,573,508.0,139.0,88.66,24.26,27.23,15.0,97.05,99.8,100.0
-24017,Charles County,Southern,False,667,540.0,99.0,80.96,14.84,49.63,27.0,65.37,98.7,100.0
-24019,Dorchester County,Eastern Shore,False,145,109.0,36.0,75.17,24.83,0.69,26.0,71.56,99.08,100.0
-24021,Frederick County,Central,False,519,388.0,48.0,74.76,9.25,53.37,20.0,77.58,95.36,99.23
-24023,Garrett County,Western,False,11,7.0,6.0,63.64,54.55,0.0,,,,
-24025,Harford County,Central,False,1088,630.0,101.0,57.9,9.28,48.62,34.0,40.32,92.54,99.21
-24027,Howard County,Central,False,1596,1093.0,100.0,68.48,6.27,76.38,49.0,19.3,93.23,99.45
-24029,Kent County,Eastern Shore,False,22,21.0,5.0,95.45,22.73,0.0,32.0,42.86,80.95,100.0
-24031,Montgomery County,Capital,False,3384,2284.0,235.0,67.49,6.94,45.8,47.0,18.35,76.66,98.34
-24033,Prince George's County,Capital,False,8240,4350.0,696.0,52.79,8.45,57.05,53.0,9.91,63.82,89.68
-24035,Queen Anne's County,Eastern Shore,False,24,18.0,5.0,75.0,20.83,25.0,21.0,61.11,94.44,100.0
-24039,Somerset County,Eastern Shore,False,76,64.0,18.0,84.21,23.68,3.95,20.0,93.75,100.0,100.0
-24037,St. Mary's County,Southern,False,255,205.0,55.0,80.39,21.57,55.69,22.0,75.12,97.07,100.0
-24041,Talbot County,Eastern Shore,False,38,30.0,11.0,78.95,28.95,23.68,19.5,96.67,100.0,100.0
-24043,Washington County,Western,False,803,576.0,171.0,71.73,21.3,3.61,26.0,69.27,85.76,99.83
-24045,Wicomico County,Eastern Shore,False,550,427.0,114.0,77.64,20.73,10.36,21.0,92.51,98.83,99.77
-24047,Worcester County,Eastern Shore,False,57,50.0,12.0,87.72,21.05,5.26,20.0,92.0,98.0,100.0
+state,jurisdiction_fips,county_name,region,is_suppressed,total_cases,closed_cases,evicted_cases,clearance_rate_pct,eviction_rate_pct,batch_efiler_pct,median_days_closed,pct_disposed_within_30d,pct_disposed_within_60d,pct_disposed_within_90d
+Maryland,24001,Allegany County,Western,False,151,130.0,90.0,86.09,59.6,0.0,12.0,90.77,95.38,100.0
+Maryland,24003,Anne Arundel County,Central,False,3478,1419.0,212.0,40.8,6.1,69.58,55.0,14.94,55.39,94.64
+Maryland,24510,Baltimore City,Central,False,14745,1258.0,1197.0,8.53,8.12,51.48,54.0,4.05,68.12,97.14
+Maryland,24005,Baltimore County,Central,False,15306,10117.0,1119.0,66.1,7.31,83.42,46.0,18.86,69.57,98.82
+Maryland,24009,Calvert County,Southern,False,84,66.0,18.0,78.57,21.43,16.67,21.5,75.76,93.94,98.48
+Maryland,24011,Caroline County,Eastern Shore,False,39,30.0,12.0,76.92,30.77,12.82,17.5,90.0,93.33,100.0
+Maryland,24013,Carroll County,Central,False,97,86.0,27.0,88.66,27.84,21.65,18.0,88.37,98.84,100.0
+Maryland,24015,Cecil County,Eastern Shore,False,573,508.0,139.0,88.66,24.26,27.23,15.0,97.05,99.8,100.0
+Maryland,24017,Charles County,Southern,False,667,540.0,99.0,80.96,14.84,49.63,27.0,65.37,98.7,100.0
+Maryland,24019,Dorchester County,Eastern Shore,False,145,109.0,36.0,75.17,24.83,0.69,26.0,71.56,99.08,100.0
+Maryland,24021,Frederick County,Central,False,519,388.0,48.0,74.76,9.25,53.37,20.0,77.58,95.36,99.23
+Maryland,24023,Garrett County,Western,False,11,7.0,6.0,63.64,54.55,0.0,,,,
+Maryland,24025,Harford County,Central,False,1088,630.0,101.0,57.9,9.28,48.62,34.0,40.32,92.54,99.21
+Maryland,24027,Howard County,Central,False,1596,1093.0,100.0,68.48,6.27,76.38,49.0,19.3,93.23,99.45
+Maryland,24029,Kent County,Eastern Shore,False,22,21.0,5.0,95.45,22.73,0.0,32.0,42.86,80.95,100.0
+Maryland,24031,Montgomery County,Capital,False,3384,2284.0,235.0,67.49,6.94,45.8,47.0,18.35,76.66,98.34
+Maryland,24033,Prince George's County,Capital,False,8240,4350.0,696.0,52.79,8.45,57.05,53.0,9.91,63.82,89.68
+Maryland,24035,Queen Anne's County,Eastern Shore,False,24,18.0,5.0,75.0,20.83,25.0,21.0,61.11,94.44,100.0
+Maryland,24039,Somerset County,Eastern Shore,False,76,64.0,18.0,84.21,23.68,3.95,20.0,93.75,100.0,100.0
+Maryland,24037,St. Mary's County,Southern,False,255,205.0,55.0,80.39,21.57,55.69,22.0,75.12,97.07,100.0
+Maryland,24041,Talbot County,Eastern Shore,False,38,30.0,11.0,78.95,28.95,23.68,19.5,96.67,100.0,100.0
+Maryland,24043,Washington County,Western,False,803,576.0,171.0,71.73,21.3,3.61,26.0,69.27,85.76,99.83
+Maryland,24045,Wicomico County,Eastern Shore,False,550,427.0,114.0,77.64,20.73,10.36,21.0,92.51,98.83,99.77
+Maryland,24047,Worcester County,Eastern Shore,False,57,50.0,12.0,87.72,21.05,5.26,20.0,92.0,98.0,100.0

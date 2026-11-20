@@ -139,7 +139,8 @@ def write_dashboard_spec(county_overall: pd.DataFrame, monthly: pd.DataFrame) ->
 > *Source: District Court of Maryland Eviction Case Data (Maryland Open Data, `mvqb-b4hf`), aligned to NODS-core schemas. Cells with fewer than 10 cases are suppressed for privacy. Closed-case medians reflect resolved petitions only; see the analytical brief for Kaplan–Meier right-censored estimates. Descriptive operational metrics only—do not interpret jurisdiction differences as causal.*
 
 ## Tableau Public Link
-* **Published URL:** *(Add your Tableau Public workbook URL here after opening `court_dashboard.hyper` in Tableau Public Desktop and publishing.)*
+* **Profile:** https://public.tableau.com/app/profile/adeli
+* **Published Workbook URL:** *(Paste exact workbook URL here after publishing from Tableau Public Desktop.)*
 """
     (TABLEAU_DIR / "dashboard_spec.md").write_text(spec, encoding="utf-8")
     print(f"[ok] Wrote {TABLEAU_DIR / 'dashboard_spec.md'}")

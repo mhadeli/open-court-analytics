@@ -28,7 +28,9 @@ data/processed/*.parquet
 .ipynb_checkpoints/
 *_files/
 
-# OS & editor files
+# OS, editor & Tableau temporary files
 .DS_Store
 .vscode/
 .idea/
+*.twbr
+.~*

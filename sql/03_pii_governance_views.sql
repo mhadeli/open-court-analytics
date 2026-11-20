@@ -54,6 +54,7 @@ WITH base AS (
     GROUP BY 1, 2, 3, 4
 )
 SELECT
+    'Maryland' AS state,
     jurisdiction_fips,
     county_name,
     region,
@@ -91,6 +92,7 @@ WITH base AS (
     GROUP BY 1, 2, 3
 )
 SELECT
+    'Maryland' AS state,
     jurisdiction_fips,
     county_name,
     region,
@@ -124,6 +126,7 @@ WITH monthly AS (
     GROUP BY 1, 2, 3, 4, 5
 )
 SELECT
+    'Maryland' AS state,
     jurisdiction_fips,
     county_name,
     region,
