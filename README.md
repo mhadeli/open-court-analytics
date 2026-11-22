@@ -1,5 +1,7 @@
 # Open Court Analytics
 
+> **Live Interactive Dashboard (5 Tabs — Brief, Survival Models, County Explorer, AI Benchmark, QA):** [https://mhadeli.github.io/open-court-analytics/](https://mhadeli.github.io/open-court-analytics/)
+
 Reproducible Python and SQL pipeline for **state court case processing analytics**, **National Open Court Data Standards (NODS)** alignment with PII governance, **3-way unstructured court-order extraction benchmarking** (regex vs. classical NLP vs. schema-validated LLM), **survival and fixed-effects statistical modeling**, and **public-safe Tableau reporting**—built entirely on real public Maryland state court records.
 
 ### Key Takeaways at a Glance
@@ -60,7 +62,8 @@ flowchart LR
 
 ## Executive Deliverables
 
-* **2-Page Analytical Brief:** [reports/court_data_brief.qmd](reports/court_data_brief.qmd) | Self-contained HTML: [reports/court_data_brief.html](reports/court_data_brief.html)
+* **Interactive 5-Tab Web Dashboard (GitHub Pages):** [https://mhadeli.github.io/open-court-analytics/](https://mhadeli.github.io/open-court-analytics/) (built from [docs/index.html](docs/index.html) & [reports/court_data_brief.html](reports/court_data_brief.html))
+* **2-Page Analytical Brief (Quarto):** [reports/court_data_brief.qmd](reports/court_data_brief.qmd)
 * **Pre-Deployment AI Readiness Scorecard:** [docs/AI_EVALUATION_SCORECARD.md](docs/AI_EVALUATION_SCORECARD.md)
 * **Methodological & Causal Limitations Memo:** [docs/LIMITATIONS_MEMO.md](docs/LIMITATIONS_MEMO.md)
 * **Tableau Desktop Workbook & Extracts:** [outputs/tableau/court-analytics.twb](outputs/tableau/court-analytics.twb), [outputs/tableau/court_dashboard.hyper](outputs/tableau/court_dashboard.hyper), suppressed CSV fallbacks, and [outputs/tableau/dashboard_spec.md](outputs/tableau/dashboard_spec.md)
@@ -130,10 +133,11 @@ open-court-analytics/
 │
 ├── reports/
 │   ├── court_data_brief.qmd                    # Phase 4: 2-page Quarto executive brief source
-│   ├── court_data_brief.html                   # Self-contained rendered HTML brief with embedded charts
-│   └── render_brief_html.py                    # Standalone HTML renderer (runs without Quarto CLI)
+│   ├── court_data_brief.html                   # Interactive 5-tab HTML dashboard & brief (standalone)
+│   └── render_brief_html.py                    # Generates interactive HTML for reports/ and docs/index.html
 │
 └── docs/
+    ├── index.html                              # GitHub Pages entry point for the 5-tab interactive dashboard
     ├── AI_EVALUATION_SCORECARD.md              # 1-page non-technical Green/Yellow/Red AI deployment scorecard
     └── LIMITATIONS_MEMO.md                     # Clerk logging gaps, censoring, OCR, and causal guardrails
 ```
