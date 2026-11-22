@@ -1,6 +1,8 @@
 # Open Court Analytics
 
-> **Live 5-Tab Interactive Dashboard:** [https://mhadeli.github.io/open-court-analytics/](https://mhadeli.github.io/open-court-analytics/)
+**Interactive Dashboard:** [https://mhadeli.github.io/open-court-analytics/](https://mhadeli.github.io/open-court-analytics/)
+
+> *Note: Built in Tableau Desktop. Because the free version does not allow web publishing, I have included a video walkthrough of the dashboard.*
 
 ## What This Project Is
 
