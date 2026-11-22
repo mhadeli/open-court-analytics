@@ -60,54 +60,84 @@ flowchart LR
 
 ## Executive Deliverables
 
-* **2-Page Analytical Brief:** [reports/court_data_brief.qmd](reports/court_data_brief.qmd) | Rendered self-contained HTML: [reports/court_data_brief.html](reports/court_data_brief.html)
+* **2-Page Analytical Brief:** [reports/court_data_brief.qmd](reports/court_data_brief.qmd) | Self-contained HTML: [reports/court_data_brief.html](reports/court_data_brief.html)
 * **Pre-Deployment AI Readiness Scorecard:** [docs/AI_EVALUATION_SCORECARD.md](docs/AI_EVALUATION_SCORECARD.md)
 * **Methodological & Causal Limitations Memo:** [docs/LIMITATIONS_MEMO.md](docs/LIMITATIONS_MEMO.md)
-* **Tableau Dashboard Assets:** [outputs/tableau/court-analytics.twb](outputs/tableau/court-analytics.twb), [outputs/tableau/court_dashboard.twbx](outputs/tableau/court_dashboard.twbx), [outputs/tableau/court_dashboard.hyper](outputs/tableau/court_dashboard.hyper), suppressed CSV fallbacks, and [outputs/tableau/dashboard_spec.md](outputs/tableau/dashboard_spec.md) ([Tableau Public Profile](https://public.tableau.com/app/profile/adeli))
+* **Tableau Desktop Workbook & Extracts:** [outputs/tableau/court-analytics.twb](outputs/tableau/court-analytics.twb), [outputs/tableau/court_dashboard.hyper](outputs/tableau/court_dashboard.hyper), suppressed CSV fallbacks, and [outputs/tableau/dashboard_spec.md](outputs/tableau/dashboard_spec.md)
+
+### Tableau Desktop Dashboard Walkthrough
+
+Interactive dashboard built in **Tableau Desktop** on the small-cell suppressed (`< 10`) Maryland aggregates (`court_dashboard.hyper`), featuring statewide KPIs, a 24-jurisdiction Maryland choropleth map, monthly filing vs. disposition trends, and 60-day time-standard compliance by county.
+
+<!-- To embed an inline playable video on GitHub: open README.md in the GitHub web editor, drag & drop your .mp4/.mov screen recording here, and replace the line below with the generated GitHub asset URL -->
+> **Dashboard Video Demo:** _Drag & drop your `.mp4`/`.mov` Tableau Desktop walkthrough in the GitHub README editor here to auto-embed a playable video._
 
 ---
 
-## Project Files & What They Do
+## Project Structure
 
-### Phase 1 — Data Acquisition, NODS Warehouse & PII Governance
-| File | Purpose |
-| :--- | :--- |
-| [src/db/00_fetch_court_data.py](src/db/00_fetch_court_data.py) | Downloads 100k public Maryland District Court eviction records (`mvqb-b4hf`) and U.S. Census TIGER county boundaries. |
-| [sql/01_staging_load.sql](sql/01_staging_load.sql) | Ingests raw CSV rows into DuckDB and normalizes clerk whitespace inconsistencies in `casenumber`. |
-| [sql/02_nods_transform.sql](sql/02_nods_transform.sql) | Maps all 24 jurisdictions to official 5-digit FIPS and builds NODS-aligned `nods_cases`, `nods_events`, and `nods_parties` tables. |
-| [sql/03_pii_governance_views.sql](sql/03_pii_governance_views.sql) | Creates masked `v_analyst_cases` (SHA-256 IDs, ZIP3 coarsening) and `< 10` suppressed public views (`v_public_*`). |
-| [sql/04_data_quality_audit.sql](sql/04_data_quality_audit.sql) | Logs automated counts for left-truncation, impossible timelines, unmapped FIPS, right-censoring, and suppressed cells. |
-| [src/db/build_warehouse.py](src/db/build_warehouse.py) | Orchestrates SQL scripts 01–04, asserts PII and small-cell suppression invariants, and exports [outputs/qa_audit_summary.csv](outputs/qa_audit_summary.csv). |
-
-### Phase 2 — Unstructured Court Order Extraction Benchmark
-| File | Purpose |
-| :--- | :--- |
-| [data/gold/annotation_guidelines.md](data/gold/annotation_guidelines.md) | Defines the 6 extraction fields, `UNKNOWN` abstention rules, `evidence_span` verification, and `clean` vs. `noisy_ocr` criteria. |
-| [data/gold/gold_court_orders.jsonl](data/gold/gold_court_orders.jsonl) | Audited 80-document gold evaluation set (`20 dev` / `60 test`) built from real Maryland appellate court opinions. |
-| [src/nlp/01_fetch_court_orders.py](src/nlp/01_fetch_court_orders.py) | Fetches Maryland appellate opinions from Harvard CAP (`static.case.law/md-app/`), anchors closing decretals, and creates stratified splits. |
-| [src/nlp/02_extract_rules.py](src/nlp/02_extract_rules.py) | Baseline 1: deterministic regex and keyword extractor on raw text → [outputs/preds_rules.jsonl](outputs/preds_rules.jsonl). |
-| [src/nlp/03_extract_classical_nlp.py](src/nlp/03_extract_classical_nlp.py) | Baseline 2: `spaCy` NER/Matcher + `scikit-learn` TF-IDF classifiers fit strictly on `dev` → [outputs/preds_classical_nlp.jsonl](outputs/preds_classical_nlp.jsonl). |
-| [src/nlp/04_extract_llm.py](src/nlp/04_extract_llm.py) | Baseline 3: Pydantic schema-validated Gemini extraction (`temperature=0`, `UNKNOWN` abstention, verbatim quotes) → [outputs/preds_llm.jsonl](outputs/preds_llm.jsonl). |
-| [src/nlp/05_evaluate_benchmark.py](src/nlp/05_evaluate_benchmark.py) | Scores all 3 methods on the 60-doc test set and generates [outputs/benchmark_metrics.csv](outputs/benchmark_metrics.csv) and [outputs/error_taxonomy.md](outputs/error_taxonomy.md). |
-
-### Phase 3 — Statistical Analysis, Mapping & Tableau Export
-| File | Purpose |
-| :--- | :--- |
-| [src/analytics/01_time_to_disposition.py](src/analytics/01_time_to_disposition.py) | Contrasts naive closed-case medians against right-censored Kaplan–Meier survival curves (`lifelines`) → [outputs/km_curves.png](outputs/km_curves.png). |
-| [src/analytics/02_regression_models.py](src/analytics/02_regression_models.py) | Fits county-stratified Cox PH, county-clustered fixed-effects logit (`statsmodels`), and a 60-day mature-cohort check → [outputs/model_coefficients.csv](outputs/model_coefficients.csv). |
-| [src/analytics/03_county_map.py](src/analytics/03_county_map.py) | Joins suppressed county aggregates to Census TIGER shapefiles (`geopandas`) → [outputs/county_bottlenecks_map.png](outputs/county_bottlenecks_map.png). |
-| [src/analytics/04_export_tableau.py](src/analytics/04_export_tableau.py) | Verifies zero PII / zero unsuppressed `< 10` cells and exports `court_dashboard.hyper`, CSV fallbacks, and [outputs/tableau/dashboard_spec.md](outputs/tableau/dashboard_spec.md). |
-| [src/analytics/05_build_tableau_workbook.py](src/analytics/05_build_tableau_workbook.py) | Programmatically packages the suppressed CSVs into a starter Tableau workbook ([outputs/tableau/court_dashboard.twbx](outputs/tableau/court_dashboard.twbx)). |
-
-### Phase 4 — Reporting, Documentation & Configuration
-| File | Purpose |
-| :--- | :--- |
-| [reports/court_data_brief.qmd](reports/court_data_brief.qmd) | 2-page Quarto executive brief combining survival analysis, county maps, benchmark results, and causal guardrails. |
-| [reports/render_brief_html.py](reports/render_brief_html.py) | Renders the self-contained HTML brief ([reports/court_data_brief.html](reports/court_data_brief.html)) with embedded charts (usable without Quarto CLI). |
-| [docs/AI_EVALUATION_SCORECARD.md](docs/AI_EVALUATION_SCORECARD.md) | 1-page non-technical Green/Yellow/Red pre-deployment AI scorecard and operational safeguards checklist. |
-| [docs/LIMITATIONS_MEMO.md](docs/LIMITATIONS_MEMO.md) | Documents cross-county clerk logging gaps, censoring/truncation caveats, OCR degradation, and causal limits. |
-| [pyproject.toml](pyproject.toml) & [uv.lock](uv.lock) | Pinned Python 3.12 environment and locked dependency graph managed via `uv`. |
-| [.env.example](.env.example) | Template environment file for configuring `GEMINI_API_KEY` locally (`.env` is gitignored). |
+```text
+open-court-analytics/
+├── README.md                                   # Project overview, findings, visuals, and run instructions
+├── pyproject.toml                              # Python 3.12 dependencies and project configuration (uv)
+├── uv.lock                                     # Locked cross-platform dependency versions
+├── .env.example                                # Template for GEMINI_API_KEY (.env is gitignored)
+│
+├── sql/                                        # Phase 1: NODS data warehouse & privacy governance SQL
+│   ├── 01_staging_load.sql                     # Load raw MD eviction CSV & normalize clerk case numbers
+│   ├── 02_nods_transform.sql                   # Map 24 MD FIPS codes into NODS cases, events, and parties
+│   ├── 03_pii_governance_views.sql             # Masked v_analyst_cases (SHA-256, ZIP3) & <10 suppressed views
+│   └── 04_data_quality_audit.sql               # Automated QA counts (truncation, bad dates, censoring)
+│
+├── src/
+│   ├── db/
+│   │   ├── 00_fetch_court_data.py              # Download MD District Court CSV (mvqb-b4hf) & Census shapefile
+│   │   └── build_warehouse.py                  # Run SQL 01–04 in DuckDB & enforce PII / suppression assertions
+│   ├── nlp/                                    # Phase 2: 3-way court-order extraction benchmark
+│   │   ├── 01_fetch_court_orders.py            # Fetch MD appellate orders from Harvard CAP & build dev/test splits
+│   │   ├── 02_extract_rules.py                 # Baseline 1: deterministic regex & keyword extractor
+│   │   ├── 03_extract_classical_nlp.py         # Baseline 2: spaCy NER/Matcher + TF-IDF linear models
+│   │   ├── 04_extract_llm.py                   # Baseline 3: schema-validated Gemini (UNKNOWN + verbatim quotes)
+│   │   └── 05_evaluate_benchmark.py            # Score precision/recall/F1, hallucination, OCR drop, latency, cost
+│   └── analytics/                              # Phase 3: Survival analysis, regressions, mapping & Tableau
+│       ├── 01_time_to_disposition.py           # Kaplan–Meier curves (lifelines) & survivorship-bias audit
+│       ├── 02_regression_models.py             # County-stratified Cox PH, clustered logit & 60d sensitivity check
+│       ├── 03_county_map.py                    # 24-county Maryland choropleth map (geopandas + Census TIGER)
+│       ├── 04_export_tableau.py                # Export suppressed public aggregates to .hyper + CSVs + spec
+│       └── 05_build_tableau_workbook.py        # Programmatic starter .twbx workbook generator
+│
+├── data/
+│   ├── raw/                                    # Downloaded raw CSVs, shapefiles & CAP JSONL (gitignored)
+│   ├── processed/                              # Local DuckDB warehouse court_warehouse.duckdb (gitignored)
+│   └── gold/
+│       ├── annotation_guidelines.md            # Field definitions, UNKNOWN rules & OCR quality tagging rubric
+│       └── gold_court_orders.jsonl             # Audited 80-doc gold dataset (20 dev / 60 test)
+│
+├── outputs/
+│   ├── qa_audit_summary.csv                    # Phase 1 warehouse QA and small-cell suppression summary
+│   ├── preds_*.jsonl                           # Per-document test predictions (rules, classical_nlp, llm_gemini)
+│   ├── benchmark_metrics.csv                   # Per-field accuracy, F1, OCR drop, latency & cost metrics
+│   ├── error_taxonomy.md                       # Concrete held-out failure cases across all 3 extractors
+│   ├── time_to_disposition_summary.csv         # Naive vs. Kaplan–Meier medians & 30/60/90/120d benchmarks
+│   ├── km_curves.png                           # Survival curves & survivorship-bias comparison plot
+│   ├── model_coefficients.csv                  # Cox PH & county-clustered logit estimates with 95% CIs
+│   ├── county_bottlenecks_map.png              # Maryland median-days and eviction-rate choropleth map
+│   └── tableau/
+│       ├── court-analytics.twb                 # Tableau Desktop interactive dashboard workbook
+│       ├── court_dashboard.twbx                # Packaged Tableau starter workbook
+│       ├── court_dashboard.hyper               # Suppressed Tableau Hyper extract (zero PII / case rows)
+│       ├── court_dashboard_*.csv               # CSV fallbacks (county_overall, county_category, monthly)
+│       └── dashboard_spec.md                   # KPIs, layout, filters, and privacy caption specification
+│
+├── reports/
+│   ├── court_data_brief.qmd                    # Phase 4: 2-page Quarto executive brief source
+│   ├── court_data_brief.html                   # Self-contained rendered HTML brief with embedded charts
+│   └── render_brief_html.py                    # Standalone HTML renderer (runs without Quarto CLI)
+│
+└── docs/
+    ├── AI_EVALUATION_SCORECARD.md              # 1-page non-technical Green/Yellow/Red AI deployment scorecard
+    └── LIMITATIONS_MEMO.md                     # Clerk logging gaps, censoring, OCR, and causal guardrails
+```
 
 ---
 
