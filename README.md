@@ -10,7 +10,7 @@ This project uses real public **Maryland state court records** to answer two pra
 
 ### Summary of Results
 
-1. **Cleaning & Protecting Court Data (SQL Warehouse):** Ingested **100,000** public Maryland District Court eviction event records (Apr–Sep 2026) across all **24 jurisdictions** into a NODS-aligned DuckDB warehouse. Removed **19,716** incomplete early records and **9** impossible dates, leaving **51,948 valid petitions**. All downstream analysis uses masked SQL views (hashed IDs, stripped addresses/full ZIPs) with automatic **`< 10` small-cell suppression** (hiding Garrett County's median and 38 small county-category cells).
+1. **Cleaning & Protecting Court Data (SQL Warehouse):** Ingested **100,000** public Maryland District Court eviction event records (Apr–Sep 2026) across all **24 jurisdictions** into a NODS-aligned DuckDB warehouse. Removed **19,716** incomplete early records and **9** impossible dates, leaving **51,948 valid petitions**. All downstream analysis uses masked SQL views (hashed IDs, stripped addresses/full ZIPs) with automatic **`< 10` small-cell suppression** on every published count and the rates built from it (38 small county-category rows removed; Garrett County's closed and eviction figures hidden).
 2. **Case Timelines & Outcomes (Statistics & Mapping):** Because **53% (27,542)** of petitions are still open at cutoff, averaging closed cases alone makes processing look like **46 days**, while survival analysis (Kaplan–Meier) puts the true median at **65 days** (+41% bias). Only **8.7%** (**4,526**) ended in an executed eviction. Rural counties close warrants far faster (Allegany 12d, Cecil 15d) than urban dockets (Anne Arundel 55d, Baltimore City 54d, Prince George's 53d)—though auditing raw events revealed that **Baltimore City logs almost no `Cancelled` (61) or `Expired` (0) returns**, so raw clearance comparisons require local clerk context.
 3. **Testing AI on Real Court Orders (Rules vs. Classical NLP vs. LLM):** Benchmarked all three methods on **60 held-out Maryland appellate orders** across 6 fields. **A hybrid pipeline wins:** simple regex matched the LLM overall (`0.871` vs. `0.862` F1) at `0.15 ms/doc` and `$0` for structured docket IDs and standard rulings, while `gemini-3.8-flash` added **+24.5 Macro-F1** on nuanced remand/stay detection (`0.983` vs. `0.738`) with **0.0% hallucinated quotes** (via forced `UNKNOWN` abstention + verbatim quote checks). Translated into a **Green / Yellow / Red** [AI Readiness Scorecard](docs/AI_EVALUATION_SCORECARD.md) (*Green*: docket IDs & standard rulings; *Yellow*: remands, categories & pro se flags with review; *Red*: never auto-post dollar judgments).
 4. **Outputs:** A live [5-Tab Interactive Web Dashboard](https://mhadeli.github.io/open-court-analytics/), a [Tableau Desktop Workbook](outputs/tableau/court-analytics.twb) (video walkthrough below), a [2-Page Quarto Brief](reports/court_data_brief.qmd), and a [Limitations Memo](docs/LIMITATIONS_MEMO.md).
@@ -122,8 +122,7 @@ open-court-analytics/
 │
 ├── reports/
 │   ├── court_data_brief.qmd                    # Phase 4: 2-page Quarto executive brief source
-│   ├── court_data_brief.html                   # Interactive 5-tab HTML dashboard & brief (standalone)
-│   └── render_brief_html.py                    # Generates interactive HTML for reports/ and docs/index.html
+│   └── render_brief_html.py                    # Generates the interactive 5-tab dashboard -> docs/index.html
 │
 └── docs/
     ├── index.html                              # GitHub Pages entry point for the 5-tab interactive dashboard
