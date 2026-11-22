@@ -1,13 +1,19 @@
 # Open Court Analytics
 
-> **Live Interactive Dashboard (5 Tabs — Brief, Survival Models, County Explorer, AI Benchmark, QA):** [https://mhadeli.github.io/open-court-analytics/](https://mhadeli.github.io/open-court-analytics/)
+> **Live 5-Tab Interactive Dashboard:** [https://mhadeli.github.io/open-court-analytics/](https://mhadeli.github.io/open-court-analytics/)
 
-Reproducible Python and SQL pipeline for **state court case processing analytics**, **National Open Court Data Standards (NODS)** alignment with PII governance, **3-way unstructured court-order extraction benchmarking** (regex vs. classical NLP vs. schema-validated LLM), **survival and fixed-effects statistical modeling**, and **public-safe Tableau reporting**—built entirely on real public Maryland state court records.
+## What This Project Is
 
-### Key Takeaways at a Glance
-* **41% Survivorship Bias in Naive Case Timelines:** Across **51,948** Maryland District Court eviction warrant petitions (Apr–Sep 2026), **53.0% (27,542)** remain open at cutoff. Ignoring open cases yields a naive median of **46.0 days** vs. the Kaplan–Meier right-censored median of **65.0 days** (+19 days).
-* **Hybrid Rule + LLM Pipelines Beat LLM-Only Deployment:** On **60 held-out Maryland appellate orders**, deterministic rules match or beat the LLM on structured docket IDs (`0.950 F1`, `0.15 ms`, `$0.00`) and standard decretals (`1.000 F1`), while `gemini-3.8-flash` delivers a **+24.5 Macro-F1 lift** on nuanced remand/procedural detection (`0.983` vs. `0.738`) with **0.0% unsupported citations**.
-* **Local Clerk Logging Drives Apparent Clearance Gaps:** Auditing event types across all 24 Maryland jurisdictions revealed that Baltimore City logs almost no `Cancelled` (61) or `Expired` (0) warrant returns in the public feed compared to neighboring counties—underscoring why raw cross-county clearance rates require schema audits before policy interpretation.
+This project uses real public **Maryland state court records** to answer two practical questions courts deal with every day:
+1. *How long do housing and eviction cases actually take across counties, and what data traps distort those numbers?*
+2. *Where can courts safely use AI (LLMs) to extract data from court orders—and where should they stick to simple rules or human review?*
+
+### Summary of Results
+
+1. **Cleaning & Protecting Court Data (SQL Warehouse):** Ingested **100,000** public Maryland District Court eviction event records (Apr–Sep 2026) across all **24 jurisdictions** into a NODS-aligned DuckDB warehouse. Removed **19,716** incomplete early records and **9** impossible dates, leaving **51,948 valid petitions**. All downstream analysis uses masked SQL views (hashed IDs, stripped addresses/full ZIPs) with automatic **`< 10` small-cell suppression** (hiding Garrett County's median and 38 small county-category cells).
+2. **Case Timelines & Outcomes (Statistics & Mapping):** Because **53% (27,542)** of petitions are still open at cutoff, averaging closed cases alone makes processing look like **46 days**, while survival analysis (Kaplan–Meier) puts the true median at **65 days** (+41% bias). Only **8.7%** (**4,526**) ended in an executed eviction. Rural counties close warrants far faster (Allegany 12d, Cecil 15d) than urban dockets (Anne Arundel 55d, Baltimore City 54d, Prince George's 53d)—though auditing raw events revealed that **Baltimore City logs almost no `Cancelled` (61) or `Expired` (0) returns**, so raw clearance comparisons require local clerk context.
+3. **Testing AI on Real Court Orders (Rules vs. Classical NLP vs. LLM):** Benchmarked all three methods on **60 held-out Maryland appellate orders** across 6 fields. **A hybrid pipeline wins:** simple regex matched the LLM overall (`0.871` vs. `0.862` F1) at `0.15 ms/doc` and `$0` for structured docket IDs and standard rulings, while `gemini-3.8-flash` added **+24.5 Macro-F1** on nuanced remand/stay detection (`0.983` vs. `0.738`) with **0.0% hallucinated quotes** (via forced `UNKNOWN` abstention + verbatim quote checks). Translated into a **Green / Yellow / Red** [AI Readiness Scorecard](docs/AI_EVALUATION_SCORECARD.md) (*Green*: docket IDs & standard rulings; *Yellow*: remands, categories & pro se flags with review; *Red*: never auto-post dollar judgments).
+4. **Outputs:** A live [5-Tab Interactive Web Dashboard](https://mhadeli.github.io/open-court-analytics/), a [Tableau Desktop Workbook](outputs/tableau/court-analytics.twb) (video walkthrough below), a [2-Page Quarto Brief](reports/court_data_brief.qmd), and a [Limitations Memo](docs/LIMITATIONS_MEMO.md).
 
 ---
 
@@ -24,19 +30,14 @@ flowchart LR
     G["Maryland Appellate Orders<br/>(Harvard CAP static.case.law)"] --> H["80-Doc Gold Set<br/>(20 dev / 60 test, OCR-tagged)"]
     H --> I["3-Way Benchmark<br/>Rules vs. spaCy/TF-IDF vs. Gemini"]
     I --> J["AI Readiness Scorecard<br/>and Error Taxonomy"]
-    D & E & J --> K["2-Page Analytical Brief<br/>(Quarto / HTML)"]
+    D & E & J --> K["Interactive 5-Tab Brief<br/>(GitHub Pages / Quarto)"]
 ```
 
 ---
 
-## Headline Results (100% Real Public Data)
+## Visuals & Model Results
 
-### 1. Data Warehouse, NODS Alignment & PII Governance (`Phase 1`)
-* **100,000** raw Maryland District Court eviction event rows ingested (Apr–Sep 2026) → **71,673** unique normalized cases across all **24 Maryland jurisdictions** (`0` unmapped county FIPS).
-* Automated QA ([outputs/qa_audit_summary.csv](outputs/qa_audit_summary.csv)) flagged and documented **19,716** left-truncated warrant returns (initial petition predated the extract window), **9** impossible timelines (`disposition_date < filing_date`), and **7** messy clerk docket strings.
-* **51,948** valid petition-cohort cases exposed via `v_analyst_cases` (salted SHA-256 `case_id_hash`, raw city and 5-digit ZIP removed, coarsened to 3-digit `tenant_zip3`); **38** county-category cells and Garrett County's closed-case median automatically suppressed under `< 10` privacy thresholds.
-
-### 2. Unstructured Court Order Extraction Benchmark (`Phase 2`, n = 60 Held-Out Orders)
+### Court Order Extraction Benchmark (n = 60 Held-Out Maryland Orders)
 
 | Method | Mean Precision | Mean Recall | Mean Macro-F1 | Exact Accuracy | Median Latency | Cost / 1k Docs | Unsupported Quotes |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -44,33 +45,21 @@ flowchart LR
 | **Classical NLP (`spaCy` + `TF-IDF`)** | 0.515 | 0.544 | 0.499 | 68.9% | 80.9 ms | **$0.00** | N/A |
 | **Structured LLM (`gemini-3.8-flash`)** | 0.891 | **0.879** | 0.862 | **92.2%** | 6,968 ms | $0.39 | **0.0%** |
 
-* Full per-field precision/recall/OCR-drop metrics: [outputs/benchmark_metrics.csv](outputs/benchmark_metrics.csv)
-* Concrete failure cases across all three methods: [outputs/error_taxonomy.md](outputs/error_taxonomy.md)
-* Non-technical Green/Yellow/Red deployment guidance: [docs/AI_EVALUATION_SCORECARD.md](docs/AI_EVALUATION_SCORECARD.md)
+Details: [per-field metrics](outputs/benchmark_metrics.csv) · [concrete failure cases](outputs/error_taxonomy.md) · [Green/Yellow/Red AI scorecard](docs/AI_EVALUATION_SCORECARD.md)
 
-### 3. Case Processing Survival Analysis, Regressions & County Mapping (`Phase 3`)
+### Case Processing Timelines, Regressions & County Map
 
 ![Kaplan–Meier Survival Curves and Survivorship Bias Comparison](outputs/km_curves.png)
 
-* **Time-to-Disposition Benchmarks:** Kaplan–Meier cumulative resolution across all 51,948 petitions is **13.6% within 30 days**, **45.6% within 60 days**, and **66.2% within 90 days** ([outputs/time_to_disposition_summary.csv](outputs/time_to_disposition_summary.csv)).
-* **County-Stratified Cox PH (`n = 51,948`):** `Wrongful Detainer` petitions resolve faster (`HR = 1.16, 95% CI: 1.05–1.28`), while `Public Housing FTPR` resolves slower (`HR = 0.73, 95% CI: 0.60–0.89`).
-* **County-Clustered Logit (`n = 51,500`):** Institutional batch e-filers show lower odds of executed eviction (`OR = 0.58, 95% CI: 0.52–0.65`), confirmed in a 60-day mature-cohort sensitivity check (`OR = 0.60, n = 31,451`) ([outputs/model_coefficients.csv](outputs/model_coefficients.csv)).
+* **Resolution Benchmarks:** Kaplan–Meier cumulative resolution is **13.6% within 30 days**, **45.6% within 60 days**, and **66.2% within 90 days** ([time_to_disposition_summary.csv](outputs/time_to_disposition_summary.csv)).
+* **County-Stratified Cox PH (`n = 51,948`):** `Wrongful Detainer` resolves faster (`HR = 1.16, 95% CI: 1.05–1.28`), while `Public Housing FTPR` resolves slower (`HR = 0.73, 95% CI: 0.60–0.89`).
+* **County-Clustered Logit (`n = 51,500`):** Institutional batch e-filers have **42% lower odds** of executed eviction (`OR = 0.58, 95% CI: 0.52–0.65`), confirmed in a 60-day mature-cohort check (`OR = 0.60, n = 31,451`) ([model_coefficients.csv](outputs/model_coefficients.csv)).
 
 ![Maryland County Time-to-Resolution and Eviction Execution Map](outputs/county_bottlenecks_map.png)
 
----
-
-## Executive Deliverables
-
-* **Interactive 5-Tab Web Dashboard (GitHub Pages):** [https://mhadeli.github.io/open-court-analytics/](https://mhadeli.github.io/open-court-analytics/) (built from [docs/index.html](docs/index.html) & [reports/court_data_brief.html](reports/court_data_brief.html))
-* **2-Page Analytical Brief (Quarto):** [reports/court_data_brief.qmd](reports/court_data_brief.qmd)
-* **Pre-Deployment AI Readiness Scorecard:** [docs/AI_EVALUATION_SCORECARD.md](docs/AI_EVALUATION_SCORECARD.md)
-* **Methodological & Causal Limitations Memo:** [docs/LIMITATIONS_MEMO.md](docs/LIMITATIONS_MEMO.md)
-* **Tableau Desktop Workbook & Extracts:** [outputs/tableau/court-analytics.twb](outputs/tableau/court-analytics.twb), [outputs/tableau/court_dashboard.hyper](outputs/tableau/court_dashboard.hyper), suppressed CSV fallbacks, and [outputs/tableau/dashboard_spec.md](outputs/tableau/dashboard_spec.md)
-
 ### Tableau Desktop Dashboard Walkthrough
 
-Interactive dashboard built in **Tableau Desktop** on the small-cell suppressed (`< 10`) Maryland aggregates (`court_dashboard.hyper`), featuring statewide KPIs, a 24-jurisdiction Maryland choropleth map, monthly filing vs. disposition trends, and 60-day time-standard compliance by county.
+Built in **Tableau Desktop** on the suppressed Hyper extract ([court_dashboard.hyper](outputs/tableau/court_dashboard.hyper), [dashboard_spec.md](outputs/tableau/dashboard_spec.md)) with statewide KPIs, a 24-jurisdiction Maryland map, monthly trends, and 60-day compliance by county.
 
 https://github.com/user-attachments/assets/74a69422-5512-4777-ac43-434451c8d5cb
 
@@ -144,17 +133,13 @@ open-court-analytics/
 
 ---
 
-## Public Data Sources & Attribution
+## Public Data Sources & Reproducibility
 
-1. **Structured Court Records:** [District Court of Maryland Eviction Case Data (`mvqb-b4hf`)](https://opendata.maryland.gov/Housing/District-Court-of-Maryland-Eviction-Case-Data/mvqb-b4hf) — Maryland Open Data Portal (Socrata SODA API; no key required).
-2. **Unstructured Court Decisions:** [Harvard Caselaw Access Project (`static.case.law/md-app/`)](https://case.law/) — Court of Special Appeals of Maryland published opinions (volumes 201–206).
-3. **Geographic Boundaries:** [U.S. Census Bureau 2023 Cartographic Boundary Files](https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_county_20m.zip) — County polygons (`STATEFP = 24`).
+* **Structured Court Records:** [District Court of Maryland Eviction Case Data (`mvqb-b4hf`)](https://opendata.maryland.gov/Housing/District-Court-of-Maryland-Eviction-Case-Data/mvqb-b4hf) — Maryland Open Data Portal (no key required).
+* **Unstructured Court Decisions:** [Harvard Caselaw Access Project (`static.case.law/md-app/`)](https://case.law/) — Court of Special Appeals of Maryland (volumes 201–206).
+* **Geographic Boundaries:** [U.S. Census Bureau 2023 Cartographic Boundary Files](https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_county_20m.zip) (`STATEFP = 24`).
 
----
-
-## Reproducing the End-to-End Pipeline
-
-> **Language & Reproducibility Note:** The pipeline is implemented in **Python + SQL** (`uv`) for one consistent environment. Equivalent R workflows map directly to `survival` (`survfit` / `coxph`), `fixest` (`feols` / `feglm` with county-clustered SEs), and `sf` + `ggplot2`.
+> **Stack note:** Implemented in **Python + SQL** (`uv`) for one consistent environment. Equivalent R workflows map directly to `survival`, `fixest`, and `sf`.
 
 ```bash
 # 1. Sync environment
@@ -180,7 +165,7 @@ python src/analytics/03_county_map.py
 python src/analytics/04_export_tableau.py
 python src/analytics/05_build_tableau_workbook.py
 
-# 5. Phase 4 — Render self-contained analytical brief (or `quarto render reports/court_data_brief.qmd`)
+# 5. Phase 4 — Render 5-tab interactive HTML dashboard (reports/ and docs/index.html)
 python reports/render_brief_html.py
 ```
 
@@ -188,4 +173,4 @@ python reports/render_brief_html.py
 
 ## Scope Disclaimer & License
 
-All statistical results in this repository are **descriptive operational analyses** of public administrative records and should not be interpreted as causal evidence of judicial, clerk, or landlord behavior. See [docs/LIMITATIONS_MEMO.md](docs/LIMITATIONS_MEMO.md) for full caveats. Released under the MIT License.
+All results in this repository are **descriptive operational analyses** of public administrative records and should not be interpreted as causal evidence of judicial, clerk, or landlord behavior. See [docs/LIMITATIONS_MEMO.md](docs/LIMITATIONS_MEMO.md) for full caveats. Released under the MIT License.
