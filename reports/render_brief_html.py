@@ -1,10 +1,10 @@
 """Build an interactive, multi-tab HTML dashboard & analytical brief from real pipeline outputs.
 
-Outputs both:
-- reports/court_data_brief.html  (standalone report)
-- docs/index.html                (GitHub Pages entry point: Branch main -> /docs)
+Output: docs/index.html (GitHub Pages entry point: Branch main -> /docs)
 
-All metrics are loaded directly from verified Phase 1–3 CSV and PNG outputs.
+Tables, charts and KPIs are loaded from the Phase 1–3 CSV and PNG outputs.
+The explanatory prose quotes figures from the Apr–Sep 2026 snapshot (cutoff 2026-09-30);
+re-check it after re-fetching data with src/db/00_fetch_court_data.py.
 Zero external CDN dependencies — works offline and on GitHub Pages.
 """
 
@@ -18,7 +18,6 @@ import pandas as pd
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 OUTPUTS_DIR = PROJECT_ROOT / "outputs"
 TABLEAU_DIR = OUTPUTS_DIR / "tableau"
-OUT_BRIEF = PROJECT_ROOT / "reports" / "court_data_brief.html"
 OUT_PAGES = PROJECT_ROOT / "docs" / "index.html"
 
 
@@ -396,7 +395,7 @@ def main() -> None:
     <div class="header-top">
       <div>
         <h1>Open Court Analytics — Interactive Dashboard &amp; Brief</h1>
-        <p>Maryland District Court Eviction Warrant Timelines (Apr–Sep 2026) &amp; Responsible LLM Document Extraction Benchmark</p>
+        <p>Maryland District Court Eviction Warrant Timelines (Apr–Sep 2026 snapshot, data cutoff Sep 30, 2026) &amp; Responsible LLM Document Extraction Benchmark</p>
       </div>
       <div class="header-links">
         <a class="btn-ghost" href="https://github.com/mhadeli/open-court-analytics" target="_blank" rel="noopener">GitHub Repo</a>
@@ -559,11 +558,11 @@ def main() -> None:
     <div class="card">
       <h2>Maryland 24-Jurisdiction Choropleth Map (Small-Cell &lt;10 Suppressed)</h2>
       <p class="explainer">
-        Compares all 23 Maryland counties plus Baltimore City side-by-side on typical time to resolve closed petitions (left) and the percentage of petitions that end in an executed eviction (right). Counties with fewer than 10 closed cases are masked for privacy.
+        Compares all 23 Maryland counties plus Baltimore City side-by-side on typical time to resolve closed petitions (left) and the percentage of petitions that end in an executed eviction (right). Any count under 10, and any rate built from it, is hidden for privacy.
       </p>
       <img class="viz-img" src="{map_uri}" alt="Maryland County Bottlenecks and Eviction Rate Map" />
       <div class="caption">
-        <strong>Map takeaway:</strong> Darker blue regions (Central and Capital urban courts) take longest to close petitions (~46–55 days), while darker red regions (smaller Western/rural counties) show higher executed-eviction shares. Garrett County (far west) is hatched because fewer than 10 closed cases occurred in this window.
+        <strong>Map takeaway:</strong> Darker blue regions (Central and Capital urban courts) take longest to close petitions (~46–55 days), while darker red regions (smaller Western/rural counties) show higher executed-eviction shares. Hatched areas are hidden for privacy: Garrett County (far west) on both maps, and Kent and Queen Anne's on the eviction map, because those counts are under 10.
       </div>
     </div>
 
@@ -590,7 +589,7 @@ def main() -> None:
 
       <h3>Monthly Filings vs. Dispositions vs. Executed Evictions (Filtered by Region)</h3>
       <p class="explainer">
-        Tracks incoming eviction petitions each month alongside completed dispositions and executed evictions. Dispositions dip in August–September because recent filings have had less time to conclude before the September 30 extract cutoff.
+        Tracks incoming eviction petitions each month alongside completed dispositions and executed evictions. Dispositions dip in August–September because recent filings have had less time to conclude before the September 30 extract cutoff. County-month counts under 10 are hidden for privacy, so these totals run slightly low.
       </p>
       <div class="legend">
         <span><i class="dot" style="background:#1b4965"></i>Filings</span>
@@ -807,7 +806,7 @@ def main() -> None:
         <h3>Privacy Controls Enforced in SQL</h3>
         <ul style="font-size:0.86rem; padding-left:1.2rem;">
           <li>Downstream scripts query only <code>v_analyst_cases</code> (salted SHA-256 <code>case_id_hash</code>, raw city &amp; 5-digit ZIP removed, coarsened to 3-digit <code>tenant_zip3</code>).</li>
-          <li>Public county/monthly exports enforce strict <strong>small-cell suppression (&lt; 10 cases)</strong>—suppressing 38 county-category cells and Garrett County's closed-case median (<code>n_closed = 7</code>).</li>
+          <li>Public county/monthly exports enforce strict <strong>small-cell suppression (&lt; 10 cases)</strong>: every published count under 10 is hidden, along with any rate that multiplies back to it. This removes 38 small county-category rows entirely and hides Garrett County's closed and eviction figures.</li>
           <li>Automated assertions in <code>build_warehouse.py</code> fail the build if any PII column or unsuppressed cell leaks.</li>
         </ul>
       </div>
@@ -937,11 +936,18 @@ function renderCounties() {{
   );
 
   // Filtered KPI rollup
-  const tot = rows.reduce((s, r) => s + (r.total_cases || 0), 0);
-  const cls = rows.reduce((s, r) => s + (r.closed_cases || 0), 0);
-  const evc = rows.reduce((s, r) => s + (r.evicted_cases || 0), 0);
-  const clr = tot > 0 ? (cls / tot * 100).toFixed(1) + '%' : '—';
-  const evr = tot > 0 ? (evc / tot * 100).toFixed(1) + '%' : '—';
+  const sum = (list, col) => list.reduce((s, r) => s + (r[col] || 0), 0);
+  // Rates use only counties whose numerator is published, so hidden counts don't drag them down
+  const rate = col => {{
+    const shown = rows.filter(r => r[col] !== null);
+    const den = sum(shown, 'total_cases');
+    return den > 0 ? (sum(shown, col) / den * 100).toFixed(1) + '%' : '—';
+  }};
+  const tot = sum(rows, 'total_cases');
+  const cls = sum(rows, 'closed_cases');
+  const evc = sum(rows, 'evicted_cases');
+  const clr = rate('closed_cases');
+  const evr = rate('evicted_cases');
   document.getElementById('filtered-kpis').innerHTML = `
     <div class="kpi"><div class="kpi-label">Jurisdictions Shown</div><div class="kpi-val">${{rows.length}}</div><div class="kpi-sub">Filter: ${{region}}</div></div>
     <div class="kpi"><div class="kpi-label">Petitions (Filtered)</div><div class="kpi-val">${{tot.toLocaleString()}}</div><div class="kpi-sub">Public suppressed rollup</div></div>
@@ -1018,10 +1024,8 @@ document.querySelector('#qa-table tbody').innerHTML = DATA.qa.map(r => `
 </html>
 """
 
-    OUT_BRIEF.write_text(html, encoding="utf-8")
     OUT_PAGES.write_text(html, encoding="utf-8")
-    print(f"[ok] Rendered interactive 5-tab dashboard -> {OUT_BRIEF} ({OUT_BRIEF.stat().st_size:,} bytes)")
-    print(f"[ok] Synced GitHub Pages entry point      -> {OUT_PAGES} ({OUT_PAGES.stat().st_size:,} bytes)")
+    print(f"[ok] Rendered interactive 5-tab dashboard -> {OUT_PAGES} ({OUT_PAGES.stat().st_size:,} bytes)")
 
 
 if __name__ == "__main__":
