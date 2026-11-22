@@ -448,13 +448,13 @@ def main() -> None:
       <div class="q-box">
         <h3>What Questions Does This Dashboard Answer?</h3>
         <ul>
-          <li><strong>Case Timelines:</strong> How long do housing and eviction cases actually take across Maryland—and why can simple averages be misleading?</li>
-          <li><strong>County Differences:</strong> Where are cases moving fastest or slowest across Maryland's 24 jurisdictions, and how does local clerk record-keeping affect the numbers?</li>
-          <li><strong>Responsible AI in Courts:</strong> Where can courts safely use AI to read legal orders, and where are simple rules or human review more reliable?</li>
+          <li><strong>Case Timelines:</strong> <em>How long do eviction cases actually take—and why can simple averages mislead?</em><br /><strong>Answer:</strong> 65 days at the midpoint once still-open cases (53%) are counted, vs. 46 days if you only average finished cases.</li>
+          <li><strong>County Differences:</strong> <em>Where are cases moving fastest or slowest, and how does local record-keeping affect the numbers?</em><br /><strong>Answer:</strong> Rural counties close in 12–15 days vs. 46–55 days in urban courts—and Baltimore City omits most cancelled/expired returns in this feed, skewing raw clearance rates.</li>
+          <li><strong>Responsible AI in Courts:</strong> <em>Where can courts safely use AI on legal orders, and where are simple rules or human review better?</em><br /><strong>Answer:</strong> Use a hybrid pipeline—simple rules win on docket IDs and standard rulings ($0, instant), AI shines on nuanced remand wording (+24.5 F1, 0% made-up quotes), and dollar awards require human sign-off.</li>
         </ul>
       </div>
 
-      <h2>Three Headline Findings (In Plain English)</h2>
+      <h2>Three Headline Findings</h2>
       <ol>
         <li><strong>Counting only finished cases hides real wait times.</strong> More than half of eviction petitions (<strong>53%</strong>, or 27,542 cases) were still open at the cutoff date. Looking only at finished cases makes the typical wait look like <strong>46 days</strong>—but properly including open cases shows the real midpoint is <strong>65 days</strong> (nearly three weeks longer).</li>
         <li><strong>Counties vary widely—and local record-keeping matters.</strong> Rural counties close warrants much faster (Allegany <strong>12 days</strong>, Cecil <strong>15 days</strong>) than high-volume urban courts (Anne Arundel <strong>55 days</strong>, Baltimore City <strong>54 days</strong>, Prince George's <strong>53 days</strong>). Just as important, Baltimore City logs almost no <code>Cancelled</code> (61) or <code>Expired</code> (0) warrants in this public feed, so raw county clearance rates cannot be compared fairly without checking local clerk reporting practices.</li>
