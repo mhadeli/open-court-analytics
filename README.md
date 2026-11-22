@@ -69,8 +69,7 @@ flowchart LR
 
 Interactive dashboard built in **Tableau Desktop** on the small-cell suppressed (`< 10`) Maryland aggregates (`court_dashboard.hyper`), featuring statewide KPIs, a 24-jurisdiction Maryland choropleth map, monthly filing vs. disposition trends, and 60-day time-standard compliance by county.
 
-<!-- To embed an inline playable video on GitHub: open README.md in the GitHub web editor, drag & drop your .mp4/.mov screen recording here, and replace the line below with the generated GitHub asset URL -->
-> **Dashboard Video Demo:** _Drag & drop your `.mp4`/`.mov` Tableau Desktop walkthrough in the GitHub README editor here to auto-embed a playable video._
+https://github.com/user-attachments/assets/74a69422-5512-4777-ac43-434451c8d5cb
 
 ---
 
