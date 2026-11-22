@@ -232,6 +232,56 @@ def main() -> None:
     font-size: 0.98rem;
     color: var(--slate);
   }}
+  .explainer {{
+    margin: 0 0 0.85rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }}
+  .caption {{
+    margin: 0.55rem 0 0.25rem;
+    font-size: 0.84rem;
+    color: var(--muted);
+    background: #f8fafc;
+    border-left: 3px solid var(--slate);
+    padding: 0.55rem 0.85rem;
+    border-radius: 3px;
+  }}
+  .q-box {{
+    background: #f0f9ff;
+    border-left: 4px solid var(--slate);
+    padding: 0.9rem 1.15rem;
+    border-radius: 4px;
+    margin-bottom: 1.15rem;
+  }}
+  .q-box h3 {{
+    margin: 0 0 0.45rem;
+    color: var(--navy);
+    font-size: 0.96rem;
+  }}
+  .q-box ul {{
+    margin: 0;
+    padding-left: 1.2rem;
+    font-size: 0.9rem;
+  }}
+  .method-grid {{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0.85rem;
+    margin-bottom: 1.15rem;
+  }}
+  .method-card {{
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.85rem 1rem;
+    font-size: 0.86rem;
+  }}
+  .method-card strong {{
+    display: block;
+    color: var(--navy);
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+  }}
   .viz-img {{
     width: 100%;
     height: auto;
@@ -396,18 +446,27 @@ def main() -> None:
     </div>
 
     <div class="card">
-      <h2>Three Headline Operational Findings</h2>
+      <div class="q-box">
+        <h3>What Questions Does This Dashboard Answer?</h3>
+        <ul>
+          <li><strong>Case Timelines:</strong> How long do housing and eviction cases actually take across Maryland—and why can simple averages be misleading?</li>
+          <li><strong>County Differences:</strong> Where are cases moving fastest or slowest across Maryland's 24 jurisdictions, and how does local clerk record-keeping affect the numbers?</li>
+          <li><strong>Responsible AI in Courts:</strong> Where can courts safely use AI to read legal orders, and where are simple rules or human review more reliable?</li>
+        </ul>
+      </div>
+
+      <h2>Three Headline Findings (In Plain English)</h2>
       <ol>
-        <li><strong>Ignoring open cases understates processing time by 41%.</strong> Naive closed-case medians report <strong>46.0 days</strong>, whereas Kaplan–Meier survival analysis right-censoring the <strong>27,542 still-open petitions (53.0%)</strong> yields a true median of <strong>65.0 days</strong> (+19 days).</li>
-        <li><strong>Cross-county disparities reflect both operational pace and local clerk logging practices.</strong> Closed petitions resolve fastest in rural jurisdictions (Allegany 12d, Cecil 15d) and slowest in high-volume urban dockets (Anne Arundel 55d, Baltimore City 54d, Prince George's 53d). Crucially, Baltimore City records almost no <code>Cancelled</code> (61) or <code>Expired</code> (0) warrant returns in this feed—making raw clearance-rate comparisons misleading without schema audits.</li>
-        <li><strong>Hybrid rule + LLM extraction beats LLM-only deployment.</strong> On 60 held-out Maryland appellate orders, deterministic regex matched or beat the LLM on structured docket IDs (<code>0.950 F1</code>, 0.15 ms, $0) and standard decretals (<code>1.000 F1</code>), while <code>gemini-3.8-flash</code> delivered a <strong>+24.5 Macro-F1 lift</strong> on nuanced remand detection (<code>0.983</code> vs. <code>0.738</code>) with <strong>0.0% unsupported citations</strong>.</li>
+        <li><strong>Counting only finished cases hides real wait times.</strong> More than half of eviction petitions (<strong>53%</strong>, or 27,542 cases) were still open at the cutoff date. Looking only at finished cases makes the typical wait look like <strong>46 days</strong>—but properly including open cases shows the real midpoint is <strong>65 days</strong> (nearly three weeks longer).</li>
+        <li><strong>Counties vary widely—and local record-keeping matters.</strong> Rural counties close warrants much faster (Allegany <strong>12 days</strong>, Cecil <strong>15 days</strong>) than high-volume urban courts (Anne Arundel <strong>55 days</strong>, Baltimore City <strong>54 days</strong>, Prince George's <strong>53 days</strong>). Just as important, Baltimore City logs almost no <code>Cancelled</code> (61) or <code>Expired</code> (0) warrants in this public feed, so raw county clearance rates cannot be compared fairly without checking local clerk reporting practices.</li>
+        <li><strong>Combining simple rules with AI beats using AI alone.</strong> Tested on <strong>60 real Maryland court orders</strong>, simple text rules were instant, free, and just as accurate for predictable items like case numbers and standard rulings. AI (<code>gemini-3.8-flash</code>) proved its value on trickier legal wording—like spotting whether a case was sent back for further court action—boosting accuracy by <strong>+24.5 F1 points</strong> with <strong>0% made-up quotes</strong>.</li>
       </ol>
 
       <div class="callout">
         <h3>What This Data Can and Cannot Support</h3>
         <ul>
-          <li><strong>Can support:</strong> Quantifying survivorship bias in court time standards, diagnosing cross-county operational bottlenecks and clerk logging inconsistencies, and selecting field-level rule vs. LLM extraction policies before deployment.</li>
-          <li><strong>Cannot support:</strong> Causal claims about judicial bias, landlord intent, or tenant outcomes. Public records omit tenant counsel status, rent arrears, informal payment agreements, and Baltimore City warrant cancellations.</li>
+          <li><strong>Can support:</strong> Measuring how much open cases distort court timelines, spotting county-level bottlenecks and record-keeping gaps, and deciding which document fields are safe to automate vs. review by staff.</li>
+          <li><strong>Cannot support:</strong> Proving why a court or landlord acted a certain way. Public records do not include tenant legal representation, rent owed, private payment agreements, or Baltimore City's cancelled warrants.</li>
         </ul>
       </div>
     </div>
@@ -417,11 +476,22 @@ def main() -> None:
   <section id="tab-timelines" class="tab-panel">
     <div class="card">
       <h2>Kaplan–Meier Time-to-Disposition &amp; Survivorship Bias</h2>
+      <p class="explainer">
+        <strong>What this measures:</strong> Because 53% of petitions in this window are still open, simply averaging finished cases leaves out the longest-running cases and makes courts look artificially fast (<em>survivorship bias</em>). <strong>Kaplan–Meier survival analysis</strong> fixes this by including both closed cases and still-open cases up to the September 30 cutoff date to estimate a realistic timeline.
+      </p>
       <img class="viz-img" src="{km_uri}" alt="Kaplan-Meier Survival Curves and Survivorship Bias" />
+      <div class="caption">
+        <strong>How to read these two charts:</strong>
+        <strong>Left (Panel A)</strong> tracks the share of cases still open as days pass—curves that drop faster mean cases close quicker, with dashed lines at 30, 60, and 90 days.
+        <strong>Right (Panel B)</strong> compares the misleading closed-case median (gray) against the Kaplan–Meier adjusted median (dark blue); for Public Housing cases, 90% are still open, so the true midpoint has not even been reached yet.
+      </div>
     </div>
 
     <div class="card">
       <h2>Survival Benchmarks by Cohort</h2>
+      <p class="explainer">
+        Summarizes petition counts, the share still open (right-censored), naive vs. adjusted median days, and what percentage of cases resolve within 30, 60, and 90 days—broken down by housing case type and filer type (large batch e-filers vs. standard filers).
+      </p>
       <div class="controls">
         <label for="ttd-filter">Group Type:</label>
         <select id="ttd-filter">
@@ -453,6 +523,9 @@ def main() -> None:
 
     <div class="card">
       <h2>Fixed-Effects Survival &amp; Clustered Logistic Regression Estimates (95% CIs)</h2>
+      <p class="explainer">
+        Tests how case type and filer type relate to <strong>closing speed</strong> (Cox model: Hazard Ratio above 1.0 = closes faster; below 1.0 = closes slower) and <strong>executed eviction likelihood</strong> (Logit model: Odds Ratio above 1.0 = higher odds of eviction; below 1.0 = lower odds), while controlling for county and month differences.
+      </p>
       <div class="controls">
         <label for="model-filter">Model:</label>
         <select id="model-filter">
@@ -485,11 +558,20 @@ def main() -> None:
   <section id="tab-counties" class="tab-panel">
     <div class="card">
       <h2>Maryland 24-Jurisdiction Choropleth Map (Small-Cell &lt;10 Suppressed)</h2>
+      <p class="explainer">
+        Compares all 23 Maryland counties plus Baltimore City side-by-side on typical time to resolve closed petitions (left) and the percentage of petitions that end in an executed eviction (right). Counties with fewer than 10 closed cases are masked for privacy.
+      </p>
       <img class="viz-img" src="{map_uri}" alt="Maryland County Bottlenecks and Eviction Rate Map" />
+      <div class="caption">
+        <strong>Map takeaway:</strong> Darker blue regions (Central and Capital urban courts) take longest to close petitions (~46–55 days), while darker red regions (smaller Western/rural counties) show higher executed-eviction shares. Garrett County (far west) is hatched because fewer than 10 closed cases occurred in this window.
+      </div>
     </div>
 
     <div class="card">
       <h2>Interactive County &amp; Region Explorer</h2>
+      <p class="explainer">
+        Filter by Maryland region or search for any jurisdiction below—the summary cards, monthly trend chart, and county breakdown table all update dynamically.
+      </p>
       <div class="controls">
         <label for="region-filter">Region:</label>
         <select id="region-filter">
@@ -507,6 +589,9 @@ def main() -> None:
       <div class="kpi-grid" id="filtered-kpis"></div>
 
       <h3>Monthly Filings vs. Dispositions vs. Executed Evictions (Filtered by Region)</h3>
+      <p class="explainer">
+        Tracks incoming eviction petitions each month alongside completed dispositions and executed evictions. Dispositions dip in August–September because recent filings have had less time to conclude before the September 30 extract cutoff.
+      </p>
       <div class="legend">
         <span><i class="dot" style="background:#1b4965"></i>Filings</span>
         <span><i class="dot" style="background:#2a9d8f"></i>Dispositions</span>
@@ -515,6 +600,9 @@ def main() -> None:
       <div class="chart-box" id="monthly-svg-box"></div>
 
       <h3>Jurisdiction Breakdown (Click Column Headers to Sort)</h3>
+      <p class="explainer">
+        County-level case volume, clearance rate, executed eviction rate, closed-case median days, and share resolved within 60 days. Click any column header to sort; <code>&lt;10 supp.</code> tags indicate privacy-suppressed values.
+      </p>
       <div class="table-wrap">
         <table id="county-table">
           <thead>
@@ -562,7 +650,26 @@ def main() -> None:
     </div>
 
     <div class="card">
+      <h2>Three Document-Reading Approaches Compared</h2>
+      <div class="method-grid">
+        <div class="method-card">
+          <strong>1. Deterministic Rules (Regex)</strong>
+          Hand-written text patterns and keyword lookups (e.g., matching <code>No. 1332</code>). Instant and free—ideal for standardized fields, but misses varied or messy wording.
+        </div>
+        <div class="method-card">
+          <strong>2. Classical NLP (spaCy + TF-IDF)</strong>
+          Traditional lightweight machine learning trained on 20 labeled examples. Strong at spotting dollar entities, but struggles on multi-category legal text without large labeled datasets.
+        </div>
+        <div class="method-card">
+          <strong>3. Structured LLM (Gemini 3.8 Flash)</strong>
+          Modern AI constrained to a strict JSON form, told to answer <code>UNKNOWN</code> when unsure, and required to copy an exact supporting quote from the text so staff can verify every answer.
+        </div>
+      </div>
+
       <h2>Pre-Deployment AI Readiness Scorecard (Non-Technical Decision Matrix)</h2>
+      <p class="explainer">
+        A plain-language deployment guide for court administrators. <strong>Green</strong> fields can be automated safely with simple rules; <strong>Yellow</strong> fields benefit from AI assistance with clerk review; <strong>Red</strong> fields carry high financial/legal risk and should never be auto-posted without human sign-off.
+      </p>
       <div class="table-wrap">
         <table>
           <thead>
@@ -617,6 +724,9 @@ def main() -> None:
 
     <div class="card">
       <h2>Per-Field Extraction Benchmark (n = 60 Held-Out Maryland Orders)</h2>
+      <p class="explainer">
+        Detailed accuracy scores on 60 unseen Maryland court orders (44 with legacy scan/OCR noise). <strong>Macro-F1</strong> balances precision and recall (1.000 = perfect); <strong>OCR Drop</strong> shows accuracy loss on noisy scans vs. clean text; <strong>Unsupported</strong> measures how often the LLM cited a quote not found verbatim in the order (0.0% across all fields).
+      </p>
       <div class="controls">
         <label for="method-filter">Method:</label>
         <select id="method-filter">
@@ -653,6 +763,9 @@ def main() -> None:
     <div class="two-col">
       <div class="card">
         <h2>Phase 1 Warehouse QA &amp; Privacy Audit</h2>
+        <p class="explainer">
+          Tracks every automated quality and privacy check run when loading 100,000 raw public court records into DuckDB—showing how incomplete early records and invalid dates are separated out before analysis, and how many small groups are suppressed for privacy.
+        </p>
         <div class="table-wrap">
           <table id="qa-table">
             <thead>
@@ -669,8 +782,8 @@ def main() -> None:
 
       <div class="card">
         <h2>Local Clerk Logging Audit (Major Jurisdictions)</h2>
-        <p style="font-size:0.86rem; color:var(--muted); margin-top:0;">
-          Even within a single statewide open-data feed, local clerks do not log non-eviction return-of-service events uniformly.
+        <p class="explainer">
+          Compares how Maryland's four largest jurisdictions record warrant outcomes in this public dataset. Notice Baltimore City logs almost no <code>Cancelled</code> or <code>Expired</code> warrants—proving why raw cross-county clearance comparisons must account for local record-keeping practices.
         </p>
         <div class="table-wrap">
           <table>
