@@ -40,12 +40,12 @@ def dtype_to_hyper(dtype: object, col_name: str) -> SqlType:
     return SqlType.text()
 
 
-def assert_public_safe(df: pd.DataFrame, table_name: str, count_col: str) -> None:
+def assert_public_safe(df: pd.DataFrame, table_name: str, count_cols: list[str]) -> None:
     forbidden = {"case_id", "case_id_hash", "tenant_city_raw", "tenant_zip_raw", "tenant_zip3"}
     leaked = set(df.columns) & forbidden
     assert not leaked, f"Governance violation in Tableau export {table_name}: {leaked}"
-    bad_small = df[count_col].dropna()
-    assert (bad_small < 10).sum() == 0, f"Unsuppressed <10 cell found in {table_name}!"
+    for col in count_cols:
+        assert (df[col].dropna() < 10).sum() == 0, f"Unsuppressed <10 cell in {table_name}.{col}!"
 
 
 def write_hyper(tables: dict[str, pd.DataFrame], hyper_path: Path) -> None:
@@ -151,12 +151,15 @@ def main() -> None:
     con = duckdb.connect(str(DB_PATH), read_only=True)
     county_overall = con.execute("SELECT * FROM v_public_county_overall ORDER BY county_name").df()
     county_category = con.execute("SELECT * FROM v_public_county_summary ORDER BY county_name, case_category").df()
-    monthly = con.execute("SELECT * FROM v_public_monthly_trends ORDER BY month_start, county_name").df()
+    monthly = con.execute("SELECT * FROM v_public_monthly_trends ORDER BY month_start, county_name, case_category").df()
     con.close()
 
-    assert_public_safe(county_overall, "v_public_county_overall", "total_cases")
-    assert_public_safe(county_category, "v_public_county_summary", "total_cases")
-    assert_public_safe(monthly, "v_public_monthly_trends", "filings_count")
+    county_counts = ["total_cases", "closed_cases", "evicted_cases"]
+    assert_public_safe(county_overall, "v_public_county_overall", county_counts)
+    assert_public_safe(county_category, "v_public_county_summary", county_counts)
+    assert_public_safe(
+        monthly, "v_public_monthly_trends", ["filings_count", "dispositions_count", "evictions_count"]
+    )
 
     # Export CSV fallbacks
     county_overall.to_csv(TABLEAU_DIR / "court_dashboard_county_overall.csv", index=False)

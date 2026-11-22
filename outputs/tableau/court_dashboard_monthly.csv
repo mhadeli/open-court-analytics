@@ -1,406 +1,406 @@
 state,jurisdiction_fips,county_name,region,case_category,month_start,is_suppressed,filings_count,dispositions_count,evictions_count
+Maryland,24003,Anne Arundel County,Central,Failure to Pay Rent,2026-04-01,False,67,49.0,
 Maryland,24003,Anne Arundel County,Central,Tenant Holding Over,2026-04-01,True,,,
-Maryland,24003,Anne Arundel County,Central,Failure to Pay Rent,2026-04-01,False,67,49.0,3.0
 Maryland,24003,Anne Arundel County,Central,Wrongful Detainer,2026-04-01,True,,,
+Maryland,24510,Baltimore City,Central,Breach of Lease,2026-04-01,True,,,
 Maryland,24510,Baltimore City,Central,Failure to Pay Rent,2026-04-01,False,757,100.0,99.0
 Maryland,24510,Baltimore City,Central,Tenant Holding Over,2026-04-01,True,,,
 Maryland,24510,Baltimore City,Central,Wrongful Detainer,2026-04-01,False,16,11.0,10.0
-Maryland,24510,Baltimore City,Central,Breach of Lease,2026-04-01,True,,,
-Maryland,24005,Baltimore County,Central,Tenant Holding Over,2026-04-01,True,,,
 Maryland,24005,Baltimore County,Central,Breach of Lease,2026-04-01,True,,,
 Maryland,24005,Baltimore County,Central,Failure to Pay Rent,2026-04-01,False,781,774.0,98.0
+Maryland,24005,Baltimore County,Central,Tenant Holding Over,2026-04-01,True,,,
 Maryland,24005,Baltimore County,Central,Wrongful Detainer,2026-04-01,True,,,
 Maryland,24009,Calvert County,Southern,Failure to Pay Rent,2026-04-01,True,,,
 Maryland,24013,Carroll County,Central,Failure to Pay Rent,2026-04-01,True,,,
 Maryland,24013,Carroll County,Central,Wrongful Detainer,2026-04-01,True,,,
-Maryland,24015,Cecil County,Eastern Shore,Wrongful Detainer,2026-04-01,True,,,
-Maryland,24015,Cecil County,Eastern Shore,Failure to Pay Rent,2026-04-01,False,39,39.0,4.0
+Maryland,24015,Cecil County,Eastern Shore,Failure to Pay Rent,2026-04-01,False,39,39.0,
 Maryland,24015,Cecil County,Eastern Shore,Tenant Holding Over,2026-04-01,True,,,
-Maryland,24017,Charles County,Southern,Wrongful Detainer,2026-04-01,True,,,
-Maryland,24017,Charles County,Southern,Tenant Holding Over,2026-04-01,True,,,
-Maryland,24017,Charles County,Southern,Failure to Pay Rent,2026-04-01,False,46,45.0,11.0
+Maryland,24015,Cecil County,Eastern Shore,Wrongful Detainer,2026-04-01,True,,,
 Maryland,24017,Charles County,Southern,Breach of Lease,2026-04-01,True,,,
-Maryland,24019,Dorchester County,Eastern Shore,Failure to Pay Rent,2026-04-01,False,22,20.0,7.0
+Maryland,24017,Charles County,Southern,Failure to Pay Rent,2026-04-01,False,46,45.0,11.0
+Maryland,24017,Charles County,Southern,Tenant Holding Over,2026-04-01,True,,,
+Maryland,24017,Charles County,Southern,Wrongful Detainer,2026-04-01,True,,,
+Maryland,24019,Dorchester County,Eastern Shore,Failure to Pay Rent,2026-04-01,False,22,20.0,
+Maryland,24021,Frederick County,Central,Failure to Pay Rent,2026-04-01,False,17,17.0,
 Maryland,24021,Frederick County,Central,Tenant Holding Over,2026-04-01,True,,,
 Maryland,24021,Frederick County,Central,Wrongful Detainer,2026-04-01,True,,,
-Maryland,24021,Frederick County,Central,Failure to Pay Rent,2026-04-01,False,17,17.0,2.0
+Maryland,24025,Harford County,Central,Failure to Pay Rent,2026-04-01,False,48,43.0,
 Maryland,24025,Harford County,Central,Wrongful Detainer,2026-04-01,True,,,
-Maryland,24025,Harford County,Central,Failure to Pay Rent,2026-04-01,False,48,43.0,8.0
-Maryland,24027,Howard County,Central,Failure to Pay Rent,2026-04-01,False,101,100.0,9.0
+Maryland,24027,Howard County,Central,Failure to Pay Rent,2026-04-01,False,101,100.0,
 Maryland,24027,Howard County,Central,Tenant Holding Over,2026-04-01,True,,,
 Maryland,24027,Howard County,Central,Wrongful Detainer,2026-04-01,True,,,
 Maryland,24031,Montgomery County,Capital,Breach of Lease,2026-04-01,True,,,
-Maryland,24031,Montgomery County,Capital,Wrongful Detainer,2026-04-01,True,,,
 Maryland,24031,Montgomery County,Capital,Failure to Pay Rent,2026-04-01,False,204,204.0,22.0
 Maryland,24031,Montgomery County,Capital,Tenant Holding Over,2026-04-01,True,,,
-Maryland,24033,Prince George's County,Capital,Wrongful Detainer,2026-04-01,True,,,
-Maryland,24033,Prince George's County,Capital,Tenant Holding Over,2026-04-01,False,16,14.0,8.0
+Maryland,24031,Montgomery County,Capital,Wrongful Detainer,2026-04-01,True,,,
 Maryland,24033,Prince George's County,Capital,Breach of Lease,2026-04-01,True,,,
 Maryland,24033,Prince George's County,Capital,Failure to Pay Rent,2026-04-01,False,648,565.0,80.0
+Maryland,24033,Prince George's County,Capital,Tenant Holding Over,2026-04-01,False,16,14.0,
+Maryland,24033,Prince George's County,Capital,Wrongful Detainer,2026-04-01,True,,,
 Maryland,24035,Queen Anne's County,Eastern Shore,Failure to Pay Rent,2026-04-01,True,,,
 Maryland,24039,Somerset County,Eastern Shore,Failure to Pay Rent,2026-04-01,True,,,
-Maryland,24037,St. Mary's County,Southern,Failure to Pay Rent,2026-04-01,False,14,13.0,3.0
+Maryland,24037,St. Mary's County,Southern,Failure to Pay Rent,2026-04-01,False,14,13.0,
 Maryland,24041,Talbot County,Eastern Shore,Failure to Pay Rent,2026-04-01,True,,,
 Maryland,24041,Talbot County,Eastern Shore,Wrongful Detainer,2026-04-01,True,,,
-Maryland,24043,Washington County,Western,Failure to Pay Rent,2026-04-01,False,20,19.0,5.0
+Maryland,24043,Washington County,Western,Failure to Pay Rent,2026-04-01,False,20,19.0,
 Maryland,24043,Washington County,Western,Tenant Holding Over,2026-04-01,True,,,
+Maryland,24045,Wicomico County,Eastern Shore,Failure to Pay Rent,2026-04-01,False,24,24.0,
 Maryland,24045,Wicomico County,Eastern Shore,Wrongful Detainer,2026-04-01,True,,,
-Maryland,24045,Wicomico County,Eastern Shore,Failure to Pay Rent,2026-04-01,False,24,24.0,6.0
-Maryland,24047,Worcester County,Eastern Shore,Tenant Holding Over,2026-04-01,True,,,
 Maryland,24047,Worcester County,Eastern Shore,Failure to Pay Rent,2026-04-01,True,,,
-Maryland,24001,Allegany County,Western,Tenant Holding Over,2026-05-01,True,,,
-Maryland,24001,Allegany County,Western,Failure to Pay Rent,2026-05-01,False,25,25.0,17.0
+Maryland,24047,Worcester County,Eastern Shore,Tenant Holding Over,2026-04-01,True,,,
 Maryland,24001,Allegany County,Western,Breach of Lease,2026-05-01,True,,,
+Maryland,24001,Allegany County,Western,Failure to Pay Rent,2026-05-01,False,25,25.0,17.0
+Maryland,24001,Allegany County,Western,Tenant Holding Over,2026-05-01,True,,,
+Maryland,24003,Anne Arundel County,Central,Breach of Lease,2026-05-01,True,,,
 Maryland,24003,Anne Arundel County,Central,Failure to Pay Rent,2026-05-01,False,675,465.0,43.0
 Maryland,24003,Anne Arundel County,Central,Tenant Holding Over,2026-05-01,True,,,
 Maryland,24003,Anne Arundel County,Central,Wrongful Detainer,2026-05-01,True,,,
-Maryland,24003,Anne Arundel County,Central,Breach of Lease,2026-05-01,True,,,
-Maryland,24510,Baltimore City,Central,Wrongful Detainer,2026-05-01,False,41,34.0,31.0
 Maryland,24510,Baltimore City,Central,Breach of Lease,2026-05-01,False,21,14.0,12.0
-Maryland,24510,Baltimore City,Central,Tenant Holding Over,2026-05-01,False,36,22.0,17.0
 Maryland,24510,Baltimore City,Central,Failure to Pay Rent,2026-05-01,False,1826,202.0,199.0
-Maryland,24005,Baltimore County,Central,Wrongful Detainer,2026-05-01,False,13,10.0,9.0
-Maryland,24005,Baltimore County,Central,Failure to Pay Rent,2026-05-01,False,2757,2687.0,217.0
-Maryland,24005,Baltimore County,Central,Tenant Holding Over,2026-05-01,False,14,13.0,7.0
+Maryland,24510,Baltimore City,Central,Tenant Holding Over,2026-05-01,False,36,22.0,17.0
+Maryland,24510,Baltimore City,Central,Wrongful Detainer,2026-05-01,False,41,34.0,31.0
 Maryland,24005,Baltimore County,Central,Breach of Lease,2026-05-01,True,,,
+Maryland,24005,Baltimore County,Central,Failure to Pay Rent,2026-05-01,False,2757,2687.0,217.0
+Maryland,24005,Baltimore County,Central,Tenant Holding Over,2026-05-01,False,14,13.0,
+Maryland,24005,Baltimore County,Central,Wrongful Detainer,2026-05-01,False,13,10.0,
 Maryland,24009,Calvert County,Southern,Breach of Lease,2026-05-01,True,,,
-Maryland,24009,Calvert County,Southern,Failure to Pay Rent,2026-05-01,False,14,13.0,5.0
-Maryland,24009,Calvert County,Southern,Wrongful Detainer,2026-05-01,True,,,
+Maryland,24009,Calvert County,Southern,Failure to Pay Rent,2026-05-01,False,14,13.0,
 Maryland,24009,Calvert County,Southern,Tenant Holding Over,2026-05-01,True,,,
-Maryland,24011,Caroline County,Eastern Shore,Failure to Pay Rent,2026-05-01,False,10,9.0,4.0
+Maryland,24009,Calvert County,Southern,Wrongful Detainer,2026-05-01,True,,,
 Maryland,24011,Caroline County,Eastern Shore,Breach of Lease,2026-05-01,True,,,
-Maryland,24013,Carroll County,Central,Wrongful Detainer,2026-05-01,True,,,
-Maryland,24013,Carroll County,Central,Failure to Pay Rent,2026-05-01,False,19,18.0,2.0
+Maryland,24011,Caroline County,Eastern Shore,Failure to Pay Rent,2026-05-01,False,10,,
 Maryland,24013,Carroll County,Central,Breach of Lease,2026-05-01,True,,,
-Maryland,24015,Cecil County,Eastern Shore,Tenant Holding Over,2026-05-01,True,,,
+Maryland,24013,Carroll County,Central,Failure to Pay Rent,2026-05-01,False,19,18.0,
+Maryland,24013,Carroll County,Central,Wrongful Detainer,2026-05-01,True,,,
 Maryland,24015,Cecil County,Eastern Shore,Failure to Pay Rent,2026-05-01,False,75,75.0,16.0
+Maryland,24015,Cecil County,Eastern Shore,Tenant Holding Over,2026-05-01,True,,,
 Maryland,24015,Cecil County,Eastern Shore,Wrongful Detainer,2026-05-01,True,,,
-Maryland,24017,Charles County,Southern,Tenant Holding Over,2026-05-01,True,,,
-Maryland,24017,Charles County,Southern,Wrongful Detainer,2026-05-01,True,,,
 Maryland,24017,Charles County,Southern,Breach of Lease,2026-05-01,True,,,
 Maryland,24017,Charles County,Southern,Failure to Pay Rent,2026-05-01,False,115,113.0,24.0
+Maryland,24017,Charles County,Southern,Tenant Holding Over,2026-05-01,True,,,
+Maryland,24017,Charles County,Southern,Wrongful Detainer,2026-05-01,True,,,
 Maryland,24019,Dorchester County,Eastern Shore,Breach of Lease,2026-05-01,True,,,
-Maryland,24019,Dorchester County,Eastern Shore,Failure to Pay Rent,2026-05-01,False,11,11.0,3.0
-Maryland,24021,Frederick County,Central,Failure to Pay Rent,2026-05-01,False,97,84.0,7.0
-Maryland,24021,Frederick County,Central,Wrongful Detainer,2026-05-01,True,,,
+Maryland,24019,Dorchester County,Eastern Shore,Failure to Pay Rent,2026-05-01,False,11,11.0,
 Maryland,24021,Frederick County,Central,Breach of Lease,2026-05-01,True,,,
+Maryland,24021,Frederick County,Central,Failure to Pay Rent,2026-05-01,False,97,84.0,
 Maryland,24021,Frederick County,Central,Tenant Holding Over,2026-05-01,True,,,
-Maryland,24025,Harford County,Central,Wrongful Detainer,2026-05-01,True,,,
+Maryland,24021,Frederick County,Central,Wrongful Detainer,2026-05-01,True,,,
 Maryland,24025,Harford County,Central,Failure to Pay Rent,2026-05-01,False,142,100.0,21.0
 Maryland,24025,Harford County,Central,Tenant Holding Over,2026-05-01,True,,,
-Maryland,24027,Howard County,Central,Tenant Holding Over,2026-05-01,True,,,
+Maryland,24025,Harford County,Central,Wrongful Detainer,2026-05-01,True,,,
 Maryland,24027,Howard County,Central,Breach of Lease,2026-05-01,True,,,
-Maryland,24027,Howard County,Central,Wrongful Detainer,2026-05-01,True,,,
 Maryland,24027,Howard County,Central,Failure to Pay Rent,2026-05-01,False,226,221.0,24.0
+Maryland,24027,Howard County,Central,Tenant Holding Over,2026-05-01,True,,,
+Maryland,24027,Howard County,Central,Wrongful Detainer,2026-05-01,True,,,
 Maryland,24029,Kent County,Eastern Shore,Failure to Pay Rent,2026-05-01,True,,,
 Maryland,24031,Montgomery County,Capital,Breach of Lease,2026-05-01,True,,,
 Maryland,24031,Montgomery County,Capital,Failure to Pay Rent,2026-05-01,False,564,550.0,58.0
-Maryland,24031,Montgomery County,Capital,Tenant Holding Over,2026-05-01,False,32,31.0,1.0
+Maryland,24031,Montgomery County,Capital,Tenant Holding Over,2026-05-01,False,32,31.0,
 Maryland,24031,Montgomery County,Capital,Wrongful Detainer,2026-05-01,True,,,
-Maryland,24033,Prince George's County,Capital,Failure to Pay Rent,2026-05-01,False,1339,1107.0,186.0
-Maryland,24033,Prince George's County,Capital,Tenant Holding Over,2026-05-01,False,31,25.0,5.0
-Maryland,24033,Prince George's County,Capital,Wrongful Detainer,2026-05-01,False,24,19.0,7.0
 Maryland,24033,Prince George's County,Capital,Breach of Lease,2026-05-01,True,,,
+Maryland,24033,Prince George's County,Capital,Failure to Pay Rent,2026-05-01,False,1339,1107.0,186.0
+Maryland,24033,Prince George's County,Capital,Tenant Holding Over,2026-05-01,False,31,25.0,
+Maryland,24033,Prince George's County,Capital,Wrongful Detainer,2026-05-01,False,24,19.0,
 Maryland,24035,Queen Anne's County,Eastern Shore,Failure to Pay Rent,2026-05-01,True,,,
 Maryland,24035,Queen Anne's County,Eastern Shore,Wrongful Detainer,2026-05-01,True,,,
-Maryland,24039,Somerset County,Eastern Shore,Wrongful Detainer,2026-05-01,True,,,
-Maryland,24039,Somerset County,Eastern Shore,Failure to Pay Rent,2026-05-01,False,19,16.0,5.0
 Maryland,24039,Somerset County,Eastern Shore,Breach of Lease,2026-05-01,True,,,
-Maryland,24037,St. Mary's County,Southern,Wrongful Detainer,2026-05-01,True,,,
+Maryland,24039,Somerset County,Eastern Shore,Failure to Pay Rent,2026-05-01,False,19,16.0,
+Maryland,24039,Somerset County,Eastern Shore,Wrongful Detainer,2026-05-01,True,,,
 Maryland,24037,St. Mary's County,Southern,Breach of Lease,2026-05-01,True,,,
-Maryland,24037,St. Mary's County,Southern,Failure to Pay Rent,2026-05-01,False,29,28.0,3.0
-Maryland,24041,Talbot County,Eastern Shore,Failure to Pay Rent,2026-05-01,False,11,11.0,4.0
-Maryland,24043,Washington County,Western,Tenant Holding Over,2026-05-01,True,,,
+Maryland,24037,St. Mary's County,Southern,Failure to Pay Rent,2026-05-01,False,29,28.0,
+Maryland,24037,St. Mary's County,Southern,Wrongful Detainer,2026-05-01,True,,,
+Maryland,24041,Talbot County,Eastern Shore,Failure to Pay Rent,2026-05-01,False,11,11.0,
 Maryland,24043,Washington County,Western,Breach of Lease,2026-05-01,True,,,
 Maryland,24043,Washington County,Western,Failure to Pay Rent,2026-05-01,False,115,114.0,29.0
+Maryland,24043,Washington County,Western,Tenant Holding Over,2026-05-01,True,,,
 Maryland,24045,Wicomico County,Eastern Shore,Failure to Pay Rent,2026-05-01,False,72,69.0,18.0
 Maryland,24045,Wicomico County,Eastern Shore,Wrongful Detainer,2026-05-01,True,,,
-Maryland,24047,Worcester County,Eastern Shore,Wrongful Detainer,2026-05-01,True,,,
 Maryland,24047,Worcester County,Eastern Shore,Failure to Pay Rent,2026-05-01,True,,,
 Maryland,24047,Worcester County,Eastern Shore,Tenant Holding Over,2026-05-01,True,,,
-Maryland,24001,Allegany County,Western,Failure to Pay Rent,2026-06-01,False,17,17.0,13.0
+Maryland,24047,Worcester County,Eastern Shore,Wrongful Detainer,2026-05-01,True,,,
 Maryland,24001,Allegany County,Western,Breach of Lease,2026-06-01,True,,,
+Maryland,24001,Allegany County,Western,Failure to Pay Rent,2026-06-01,False,17,17.0,13.0
 Maryland,24001,Allegany County,Western,Public Housing FTPR,2026-06-01,True,,,
 Maryland,24001,Allegany County,Western,Wrongful Detainer,2026-06-01,True,,,
 Maryland,24003,Anne Arundel County,Central,Breach of Lease,2026-06-01,True,,,
-Maryland,24003,Anne Arundel County,Central,Wrongful Detainer,2026-06-01,True,,,
 Maryland,24003,Anne Arundel County,Central,Failure to Pay Rent,2026-06-01,False,640,289.0,60.0
 Maryland,24003,Anne Arundel County,Central,Tenant Holding Over,2026-06-01,True,,,
-Maryland,24510,Baltimore City,Central,Tenant Holding Over,2026-06-01,False,40,28.0,22.0
-Maryland,24510,Baltimore City,Central,Public Housing FTPR,2026-06-01,False,174,19.0,19.0
+Maryland,24003,Anne Arundel County,Central,Wrongful Detainer,2026-06-01,True,,,
+Maryland,24510,Baltimore City,Central,Breach of Lease,2026-06-01,False,17,14.0,
 Maryland,24510,Baltimore City,Central,Failure to Pay Rent,2026-06-01,False,2761,327.0,324.0
+Maryland,24510,Baltimore City,Central,Public Housing FTPR,2026-06-01,False,174,19.0,19.0
+Maryland,24510,Baltimore City,Central,Tenant Holding Over,2026-06-01,False,40,28.0,22.0
 Maryland,24510,Baltimore City,Central,Wrongful Detainer,2026-06-01,False,52,43.0,41.0
-Maryland,24510,Baltimore City,Central,Breach of Lease,2026-06-01,False,17,14.0,9.0
 Maryland,24005,Baltimore County,Central,Breach of Lease,2026-06-01,True,,,
-Maryland,24005,Baltimore County,Central,Tenant Holding Over,2026-06-01,False,11,9.0,3.0
-Maryland,24005,Baltimore County,Central,Wrongful Detainer,2026-06-01,False,15,13.0,8.0
 Maryland,24005,Baltimore County,Central,Failure to Pay Rent,2026-06-01,False,3130,3043.0,296.0
-Maryland,24009,Calvert County,Southern,Wrongful Detainer,2026-06-01,True,,,
-Maryland,24009,Calvert County,Southern,Failure to Pay Rent,2026-06-01,False,16,16.0,2.0
+Maryland,24005,Baltimore County,Central,Tenant Holding Over,2026-06-01,False,11,,
+Maryland,24005,Baltimore County,Central,Wrongful Detainer,2026-06-01,False,15,13.0,
+Maryland,24009,Calvert County,Southern,Failure to Pay Rent,2026-06-01,False,16,16.0,
 Maryland,24009,Calvert County,Southern,Tenant Holding Over,2026-06-01,True,,,
+Maryland,24009,Calvert County,Southern,Wrongful Detainer,2026-06-01,True,,,
 Maryland,24011,Caroline County,Eastern Shore,Failure to Pay Rent,2026-06-01,True,,,
+Maryland,24013,Carroll County,Central,Failure to Pay Rent,2026-06-01,False,14,14.0,
 Maryland,24013,Carroll County,Central,Tenant Holding Over,2026-06-01,True,,,
-Maryland,24013,Carroll County,Central,Failure to Pay Rent,2026-06-01,False,14,14.0,4.0
 Maryland,24013,Carroll County,Central,Wrongful Detainer,2026-06-01,True,,,
-Maryland,24015,Cecil County,Eastern Shore,Wrongful Detainer,2026-06-01,True,,,
-Maryland,24015,Cecil County,Eastern Shore,Failure to Pay Rent,2026-06-01,False,110,109.0,30.0
 Maryland,24015,Cecil County,Eastern Shore,Breach of Lease,2026-06-01,True,,,
-Maryland,24017,Charles County,Southern,Tenant Holding Over,2026-06-01,True,,,
+Maryland,24015,Cecil County,Eastern Shore,Failure to Pay Rent,2026-06-01,False,110,109.0,30.0
+Maryland,24015,Cecil County,Eastern Shore,Wrongful Detainer,2026-06-01,True,,,
 Maryland,24017,Charles County,Southern,Breach of Lease,2026-06-01,True,,,
 Maryland,24017,Charles County,Southern,Failure to Pay Rent,2026-06-01,False,124,122.0,26.0
+Maryland,24017,Charles County,Southern,Tenant Holding Over,2026-06-01,True,,,
 Maryland,24017,Charles County,Southern,Wrongful Detainer,2026-06-01,True,,,
-Maryland,24019,Dorchester County,Eastern Shore,Failure to Pay Rent,2026-06-01,False,16,15.0,4.0
-Maryland,24019,Dorchester County,Eastern Shore,Wrongful Detainer,2026-06-01,True,,,
+Maryland,24019,Dorchester County,Eastern Shore,Failure to Pay Rent,2026-06-01,False,16,15.0,
 Maryland,24019,Dorchester County,Eastern Shore,Tenant Holding Over,2026-06-01,True,,,
+Maryland,24019,Dorchester County,Eastern Shore,Wrongful Detainer,2026-06-01,True,,,
+Maryland,24021,Frederick County,Central,Failure to Pay Rent,2026-06-01,False,78,78.0,
 Maryland,24021,Frederick County,Central,Tenant Holding Over,2026-06-01,True,,,
 Maryland,24021,Frederick County,Central,Wrongful Detainer,2026-06-01,True,,,
-Maryland,24021,Frederick County,Central,Failure to Pay Rent,2026-06-01,False,78,78.0,8.0
 Maryland,24023,Garrett County,Western,Breach of Lease,2026-06-01,True,,,
-Maryland,24023,Garrett County,Western,Tenant Holding Over,2026-06-01,True,,,
 Maryland,24023,Garrett County,Western,Failure to Pay Rent,2026-06-01,True,,,
+Maryland,24023,Garrett County,Western,Tenant Holding Over,2026-06-01,True,,,
 Maryland,24025,Harford County,Central,Breach of Lease,2026-06-01,True,,,
+Maryland,24025,Harford County,Central,Failure to Pay Rent,2026-06-01,False,165,120.0,13.0
 Maryland,24025,Harford County,Central,Tenant Holding Over,2026-06-01,True,,,
 Maryland,24025,Harford County,Central,Wrongful Detainer,2026-06-01,True,,,
-Maryland,24025,Harford County,Central,Failure to Pay Rent,2026-06-01,False,165,120.0,13.0
-Maryland,24027,Howard County,Central,Failure to Pay Rent,2026-06-01,False,366,360.0,24.0
 Maryland,24027,Howard County,Central,Breach of Lease,2026-06-01,True,,,
-Maryland,24027,Howard County,Central,Wrongful Detainer,2026-06-01,True,,,
+Maryland,24027,Howard County,Central,Failure to Pay Rent,2026-06-01,False,366,360.0,24.0
 Maryland,24027,Howard County,Central,Tenant Holding Over,2026-06-01,True,,,
+Maryland,24027,Howard County,Central,Wrongful Detainer,2026-06-01,True,,,
 Maryland,24029,Kent County,Eastern Shore,Failure to Pay Rent,2026-06-01,True,,,
-Maryland,24031,Montgomery County,Capital,Public Housing FTPR,2026-06-01,True,,,
-Maryland,24031,Montgomery County,Capital,Wrongful Detainer,2026-06-01,True,,,
-Maryland,24031,Montgomery County,Capital,Tenant Holding Over,2026-06-01,False,31,29.0,9.0
-Maryland,24031,Montgomery County,Capital,Failure to Pay Rent,2026-06-01,False,554,524.0,49.0
 Maryland,24031,Montgomery County,Capital,Breach of Lease,2026-06-01,True,,,
+Maryland,24031,Montgomery County,Capital,Failure to Pay Rent,2026-06-01,False,554,524.0,49.0
+Maryland,24031,Montgomery County,Capital,Public Housing FTPR,2026-06-01,True,,,
+Maryland,24031,Montgomery County,Capital,Tenant Holding Over,2026-06-01,False,31,29.0,
+Maryland,24031,Montgomery County,Capital,Wrongful Detainer,2026-06-01,True,,,
 Maryland,24033,Prince George's County,Capital,Breach of Lease,2026-06-01,True,,,
-Maryland,24033,Prince George's County,Capital,Wrongful Detainer,2026-06-01,False,26,22.0,11.0
-Maryland,24033,Prince George's County,Capital,Tenant Holding Over,2026-06-01,False,52,28.0,6.0
 Maryland,24033,Prince George's County,Capital,Failure to Pay Rent,2026-06-01,False,1233,940.0,151.0
+Maryland,24033,Prince George's County,Capital,Tenant Holding Over,2026-06-01,False,52,28.0,
+Maryland,24033,Prince George's County,Capital,Wrongful Detainer,2026-06-01,False,26,22.0,11.0
 Maryland,24035,Queen Anne's County,Eastern Shore,Failure to Pay Rent,2026-06-01,True,,,
-Maryland,24039,Somerset County,Eastern Shore,Failure to Pay Rent,2026-06-01,False,14,14.0,3.0
+Maryland,24039,Somerset County,Eastern Shore,Failure to Pay Rent,2026-06-01,False,14,14.0,
 Maryland,24039,Somerset County,Eastern Shore,Tenant Holding Over,2026-06-01,True,,,
 Maryland,24037,St. Mary's County,Southern,Failure to Pay Rent,2026-06-01,False,57,57.0,18.0
 Maryland,24037,St. Mary's County,Southern,Public Housing FTPR,2026-06-01,True,,,
 Maryland,24037,St. Mary's County,Southern,Tenant Holding Over,2026-06-01,True,,,
 Maryland,24037,St. Mary's County,Southern,Wrongful Detainer,2026-06-01,True,,,
 Maryland,24041,Talbot County,Eastern Shore,Failure to Pay Rent,2026-06-01,True,,,
-Maryland,24043,Washington County,Western,Failure to Pay Rent,2026-06-01,False,144,143.0,38.0
 Maryland,24043,Washington County,Western,Breach of Lease,2026-06-01,True,,,
-Maryland,24043,Washington County,Western,Public Housing FTPR,2026-06-01,False,20,20.0,4.0
-Maryland,24043,Washington County,Western,Wrongful Detainer,2026-06-01,True,,,
+Maryland,24043,Washington County,Western,Failure to Pay Rent,2026-06-01,False,144,143.0,38.0
+Maryland,24043,Washington County,Western,Public Housing FTPR,2026-06-01,False,20,20.0,
 Maryland,24043,Washington County,Western,Tenant Holding Over,2026-06-01,True,,,
+Maryland,24043,Washington County,Western,Wrongful Detainer,2026-06-01,True,,,
+Maryland,24045,Wicomico County,Eastern Shore,Failure to Pay Rent,2026-06-01,False,110,110.0,30.0
 Maryland,24045,Wicomico County,Eastern Shore,Tenant Holding Over,2026-06-01,True,,,
 Maryland,24045,Wicomico County,Eastern Shore,Wrongful Detainer,2026-06-01,True,,,
-Maryland,24045,Wicomico County,Eastern Shore,Failure to Pay Rent,2026-06-01,False,110,110.0,30.0
-Maryland,24047,Worcester County,Eastern Shore,Wrongful Detainer,2026-06-01,True,,,
 Maryland,24047,Worcester County,Eastern Shore,Failure to Pay Rent,2026-06-01,True,,,
-Maryland,24001,Allegany County,Western,Tenant Holding Over,2026-07-01,True,,,
-Maryland,24001,Allegany County,Western,Wrongful Detainer,2026-07-01,True,,,
+Maryland,24047,Worcester County,Eastern Shore,Wrongful Detainer,2026-06-01,True,,,
 Maryland,24001,Allegany County,Western,Failure to Pay Rent,2026-07-01,False,23,23.0,16.0
 Maryland,24001,Allegany County,Western,Public Housing FTPR,2026-07-01,True,,,
-Maryland,24003,Anne Arundel County,Central,Tenant Holding Over,2026-07-01,True,,,
-Maryland,24003,Anne Arundel County,Central,Failure to Pay Rent,2026-07-01,False,681,385.0,58.0
-Maryland,24003,Anne Arundel County,Central,Wrongful Detainer,2026-07-01,True,,,
+Maryland,24001,Allegany County,Western,Tenant Holding Over,2026-07-01,True,,,
+Maryland,24001,Allegany County,Western,Wrongful Detainer,2026-07-01,True,,,
 Maryland,24003,Anne Arundel County,Central,Breach of Lease,2026-07-01,True,,,
-Maryland,24510,Baltimore City,Central,Wrongful Detainer,2026-07-01,False,45,32.0,29.0
+Maryland,24003,Anne Arundel County,Central,Failure to Pay Rent,2026-07-01,False,681,385.0,58.0
+Maryland,24003,Anne Arundel County,Central,Tenant Holding Over,2026-07-01,True,,,
+Maryland,24003,Anne Arundel County,Central,Wrongful Detainer,2026-07-01,True,,,
 Maryland,24510,Baltimore City,Central,Breach of Lease,2026-07-01,False,24,14.0,11.0
 Maryland,24510,Baltimore City,Central,Failure to Pay Rent,2026-07-01,False,2953,288.0,288.0
-Maryland,24510,Baltimore City,Central,Tenant Holding Over,2026-07-01,False,42,28.0,15.0
 Maryland,24510,Baltimore City,Central,Public Housing FTPR,2026-07-01,False,270,12.0,12.0
-Maryland,24005,Baltimore County,Central,Failure to Pay Rent,2026-07-01,False,2820,2210.0,231.0
-Maryland,24005,Baltimore County,Central,Wrongful Detainer,2026-07-01,False,12,6.0,4.0
-Maryland,24005,Baltimore County,Central,Tenant Holding Over,2026-07-01,False,17,11.0,6.0
+Maryland,24510,Baltimore City,Central,Tenant Holding Over,2026-07-01,False,42,28.0,15.0
+Maryland,24510,Baltimore City,Central,Wrongful Detainer,2026-07-01,False,45,32.0,29.0
 Maryland,24005,Baltimore County,Central,Breach of Lease,2026-07-01,True,,,
+Maryland,24005,Baltimore County,Central,Failure to Pay Rent,2026-07-01,False,2820,2210.0,231.0
+Maryland,24005,Baltimore County,Central,Tenant Holding Over,2026-07-01,False,17,11.0,
+Maryland,24005,Baltimore County,Central,Wrongful Detainer,2026-07-01,False,12,,
 Maryland,24009,Calvert County,Southern,Breach of Lease,2026-07-01,True,,,
-Maryland,24009,Calvert County,Southern,Failure to Pay Rent,2026-07-01,False,16,16.0,5.0
-Maryland,24011,Caroline County,Eastern Shore,Failure to Pay Rent,2026-07-01,False,10,10.0,3.0
-Maryland,24013,Carroll County,Central,Wrongful Detainer,2026-07-01,True,,,
-Maryland,24013,Carroll County,Central,Failure to Pay Rent,2026-07-01,False,16,16.0,5.0
+Maryland,24009,Calvert County,Southern,Failure to Pay Rent,2026-07-01,False,16,16.0,
+Maryland,24011,Caroline County,Eastern Shore,Failure to Pay Rent,2026-07-01,False,10,10.0,
+Maryland,24013,Carroll County,Central,Failure to Pay Rent,2026-07-01,False,16,16.0,
 Maryland,24013,Carroll County,Central,Tenant Holding Over,2026-07-01,True,,,
-Maryland,24015,Cecil County,Eastern Shore,Tenant Holding Over,2026-07-01,True,,,
+Maryland,24013,Carroll County,Central,Wrongful Detainer,2026-07-01,True,,,
 Maryland,24015,Cecil County,Eastern Shore,Breach of Lease,2026-07-01,True,,,
 Maryland,24015,Cecil County,Eastern Shore,Failure to Pay Rent,2026-07-01,False,117,116.0,32.0
+Maryland,24015,Cecil County,Eastern Shore,Tenant Holding Over,2026-07-01,True,,,
 Maryland,24015,Cecil County,Eastern Shore,Wrongful Detainer,2026-07-01,True,,,
+Maryland,24017,Charles County,Southern,Failure to Pay Rent,2026-07-01,False,130,122.0,18.0
 Maryland,24017,Charles County,Southern,Tenant Holding Over,2026-07-01,True,,,
 Maryland,24017,Charles County,Southern,Wrongful Detainer,2026-07-01,True,,,
-Maryland,24017,Charles County,Southern,Failure to Pay Rent,2026-07-01,False,130,122.0,18.0
-Maryland,24019,Dorchester County,Eastern Shore,Failure to Pay Rent,2026-07-01,False,32,29.0,8.0
-Maryland,24021,Frederick County,Central,Failure to Pay Rent,2026-07-01,False,81,81.0,8.0
+Maryland,24019,Dorchester County,Eastern Shore,Failure to Pay Rent,2026-07-01,False,32,29.0,
 Maryland,24021,Frederick County,Central,Breach of Lease,2026-07-01,True,,,
-Maryland,24021,Frederick County,Central,Wrongful Detainer,2026-07-01,True,,,
+Maryland,24021,Frederick County,Central,Failure to Pay Rent,2026-07-01,False,81,81.0,
 Maryland,24021,Frederick County,Central,Tenant Holding Over,2026-07-01,True,,,
+Maryland,24021,Frederick County,Central,Wrongful Detainer,2026-07-01,True,,,
 Maryland,24023,Garrett County,Western,Failure to Pay Rent,2026-07-01,True,,,
+Maryland,24025,Harford County,Central,Breach of Lease,2026-07-01,True,,,
 Maryland,24025,Harford County,Central,Failure to Pay Rent,2026-07-01,False,196,182.0,32.0
 Maryland,24025,Harford County,Central,Tenant Holding Over,2026-07-01,True,,,
-Maryland,24025,Harford County,Central,Breach of Lease,2026-07-01,True,,,
-Maryland,24027,Howard County,Central,Tenant Holding Over,2026-07-01,True,,,
 Maryland,24027,Howard County,Central,Breach of Lease,2026-07-01,True,,,
-Maryland,24027,Howard County,Central,Wrongful Detainer,2026-07-01,True,,,
 Maryland,24027,Howard County,Central,Failure to Pay Rent,2026-07-01,False,259,243.0,25.0
+Maryland,24027,Howard County,Central,Tenant Holding Over,2026-07-01,True,,,
+Maryland,24027,Howard County,Central,Wrongful Detainer,2026-07-01,True,,,
 Maryland,24029,Kent County,Eastern Shore,Failure to Pay Rent,2026-07-01,True,,,
-Maryland,24031,Montgomery County,Capital,Failure to Pay Rent,2026-07-01,False,650,535.0,50.0
 Maryland,24031,Montgomery County,Capital,Breach of Lease,2026-07-01,True,,,
-Maryland,24031,Montgomery County,Capital,Wrongful Detainer,2026-07-01,False,10,9.0,4.0
-Maryland,24031,Montgomery County,Capital,Tenant Holding Over,2026-07-01,False,30,18.0,5.0
-Maryland,24033,Prince George's County,Capital,Failure to Pay Rent,2026-07-01,False,1437,939.0,157.0
-Maryland,24033,Prince George's County,Capital,Tenant Holding Over,2026-07-01,False,46,25.0,9.0
-Maryland,24033,Prince George's County,Capital,Wrongful Detainer,2026-07-01,False,20,12.0,7.0
+Maryland,24031,Montgomery County,Capital,Failure to Pay Rent,2026-07-01,False,650,535.0,50.0
+Maryland,24031,Montgomery County,Capital,Tenant Holding Over,2026-07-01,False,30,18.0,
+Maryland,24031,Montgomery County,Capital,Wrongful Detainer,2026-07-01,False,10,,
 Maryland,24033,Prince George's County,Capital,Breach of Lease,2026-07-01,True,,,
+Maryland,24033,Prince George's County,Capital,Failure to Pay Rent,2026-07-01,False,1437,939.0,157.0
+Maryland,24033,Prince George's County,Capital,Tenant Holding Over,2026-07-01,False,46,25.0,
+Maryland,24033,Prince George's County,Capital,Wrongful Detainer,2026-07-01,False,20,12.0,
 Maryland,24035,Queen Anne's County,Eastern Shore,Failure to Pay Rent,2026-07-01,True,,,
-Maryland,24039,Somerset County,Eastern Shore,Failure to Pay Rent,2026-07-01,False,11,11.0,4.0
+Maryland,24039,Somerset County,Eastern Shore,Failure to Pay Rent,2026-07-01,False,11,11.0,
 Maryland,24039,Somerset County,Eastern Shore,Wrongful Detainer,2026-07-01,True,,,
-Maryland,24037,St. Mary's County,Southern,Wrongful Detainer,2026-07-01,True,,,
 Maryland,24037,St. Mary's County,Southern,Breach of Lease,2026-07-01,True,,,
 Maryland,24037,St. Mary's County,Southern,Failure to Pay Rent,2026-07-01,False,47,46.0,13.0
+Maryland,24037,St. Mary's County,Southern,Wrongful Detainer,2026-07-01,True,,,
 Maryland,24041,Talbot County,Eastern Shore,Failure to Pay Rent,2026-07-01,True,,,
+Maryland,24043,Washington County,Western,Breach of Lease,2026-07-01,True,,,
+Maryland,24043,Washington County,Western,Failure to Pay Rent,2026-07-01,False,131,104.0,26.0
+Maryland,24043,Washington County,Western,Public Housing FTPR,2026-07-01,True,,,
 Maryland,24043,Washington County,Western,Tenant Holding Over,2026-07-01,True,,,
 Maryland,24043,Washington County,Western,Wrongful Detainer,2026-07-01,True,,,
-Maryland,24043,Washington County,Western,Breach of Lease,2026-07-01,True,,,
-Maryland,24043,Washington County,Western,Public Housing FTPR,2026-07-01,True,,,
-Maryland,24043,Washington County,Western,Failure to Pay Rent,2026-07-01,False,131,104.0,26.0
 Maryland,24045,Wicomico County,Eastern Shore,Failure to Pay Rent,2026-07-01,False,105,98.0,20.0
-Maryland,24045,Wicomico County,Eastern Shore,Wrongful Detainer,2026-07-01,True,,,
 Maryland,24045,Wicomico County,Eastern Shore,Tenant Holding Over,2026-07-01,True,,,
-Maryland,24047,Worcester County,Eastern Shore,Failure to Pay Rent,2026-07-01,False,17,17.0,4.0
+Maryland,24045,Wicomico County,Eastern Shore,Wrongful Detainer,2026-07-01,True,,,
+Maryland,24047,Worcester County,Eastern Shore,Failure to Pay Rent,2026-07-01,False,17,17.0,
 Maryland,24047,Worcester County,Eastern Shore,Tenant Holding Over,2026-07-01,True,,,
-Maryland,24001,Allegany County,Western,Public Housing FTPR,2026-08-01,True,,,
 Maryland,24001,Allegany County,Western,Failure to Pay Rent,2026-08-01,False,30,25.0,19.0
+Maryland,24001,Allegany County,Western,Public Housing FTPR,2026-08-01,True,,,
 Maryland,24001,Allegany County,Western,Wrongful Detainer,2026-08-01,True,,,
 Maryland,24003,Anne Arundel County,Central,Breach of Lease,2026-08-01,True,,,
-Maryland,24003,Anne Arundel County,Central,Tenant Holding Over,2026-08-01,True,,,
 Maryland,24003,Anne Arundel County,Central,Failure to Pay Rent,2026-08-01,False,843,182.0,34.0
+Maryland,24003,Anne Arundel County,Central,Tenant Holding Over,2026-08-01,True,,,
 Maryland,24003,Anne Arundel County,Central,Wrongful Detainer,2026-08-01,True,,,
+Maryland,24510,Baltimore City,Central,Breach of Lease,2026-08-01,False,18,,
 Maryland,24510,Baltimore City,Central,Failure to Pay Rent,2026-08-01,False,2498,31.0,31.0
-Maryland,24510,Baltimore City,Central,Public Housing FTPR,2026-08-01,False,203,3.0,3.0
-Maryland,24510,Baltimore City,Central,Tenant Holding Over,2026-08-01,False,45,11.0,8.0
-Maryland,24510,Baltimore City,Central,Wrongful Detainer,2026-08-01,False,28,11.0,8.0
-Maryland,24510,Baltimore City,Central,Breach of Lease,2026-08-01,False,18,2.0,2.0
-Maryland,24005,Baltimore County,Central,Tenant Holding Over,2026-08-01,False,11,6.0,6.0
+Maryland,24510,Baltimore City,Central,Public Housing FTPR,2026-08-01,False,203,,
+Maryland,24510,Baltimore City,Central,Tenant Holding Over,2026-08-01,False,45,11.0,
+Maryland,24510,Baltimore City,Central,Wrongful Detainer,2026-08-01,False,28,11.0,
 Maryland,24005,Baltimore County,Central,Breach of Lease,2026-08-01,True,,,
 Maryland,24005,Baltimore County,Central,Failure to Pay Rent,2026-08-01,False,2579,1101.0,167.0
-Maryland,24005,Baltimore County,Central,Wrongful Detainer,2026-08-01,False,15,8.0,4.0
+Maryland,24005,Baltimore County,Central,Tenant Holding Over,2026-08-01,False,11,,
+Maryland,24005,Baltimore County,Central,Wrongful Detainer,2026-08-01,False,15,,
+Maryland,24009,Calvert County,Southern,Failure to Pay Rent,2026-08-01,False,13,11.0,
 Maryland,24009,Calvert County,Southern,Wrongful Detainer,2026-08-01,True,,,
-Maryland,24009,Calvert County,Southern,Failure to Pay Rent,2026-08-01,False,13,11.0,2.0
-Maryland,24011,Caroline County,Eastern Shore,Wrongful Detainer,2026-08-01,True,,,
 Maryland,24011,Caroline County,Eastern Shore,Failure to Pay Rent,2026-08-01,True,,,
-Maryland,24013,Carroll County,Central,Failure to Pay Rent,2026-08-01,False,21,19.0,8.0
+Maryland,24011,Caroline County,Eastern Shore,Wrongful Detainer,2026-08-01,True,,,
+Maryland,24013,Carroll County,Central,Failure to Pay Rent,2026-08-01,False,21,19.0,
 Maryland,24013,Carroll County,Central,Tenant Holding Over,2026-08-01,True,,,
 Maryland,24013,Carroll County,Central,Wrongful Detainer,2026-08-01,True,,,
-Maryland,24015,Cecil County,Eastern Shore,Wrongful Detainer,2026-08-01,True,,,
 Maryland,24015,Cecil County,Eastern Shore,Failure to Pay Rent,2026-08-01,False,103,101.0,25.0
 Maryland,24015,Cecil County,Eastern Shore,Tenant Holding Over,2026-08-01,True,,,
+Maryland,24015,Cecil County,Eastern Shore,Wrongful Detainer,2026-08-01,True,,,
 Maryland,24017,Charles County,Southern,Failure to Pay Rent,2026-08-01,False,101,94.0,12.0
-Maryland,24017,Charles County,Southern,Wrongful Detainer,2026-08-01,True,,,
 Maryland,24017,Charles County,Southern,Tenant Holding Over,2026-08-01,True,,,
-Maryland,24019,Dorchester County,Eastern Shore,Failure to Pay Rent,2026-08-01,False,26,26.0,8.0
+Maryland,24017,Charles County,Southern,Wrongful Detainer,2026-08-01,True,,,
+Maryland,24019,Dorchester County,Eastern Shore,Failure to Pay Rent,2026-08-01,False,26,26.0,
 Maryland,24019,Dorchester County,Eastern Shore,Tenant Holding Over,2026-08-01,True,,,
+Maryland,24021,Frederick County,Central,Failure to Pay Rent,2026-08-01,False,84,68.0,
 Maryland,24021,Frederick County,Central,Tenant Holding Over,2026-08-01,True,,,
-Maryland,24021,Frederick County,Central,Failure to Pay Rent,2026-08-01,False,84,68.0,5.0
 Maryland,24021,Frederick County,Central,Wrongful Detainer,2026-08-01,True,,,
 Maryland,24023,Garrett County,Western,Failure to Pay Rent,2026-08-01,True,,,
 Maryland,24025,Harford County,Central,Breach of Lease,2026-08-01,True,,,
-Maryland,24025,Harford County,Central,Wrongful Detainer,2026-08-01,True,,,
 Maryland,24025,Harford County,Central,Failure to Pay Rent,2026-08-01,False,285,143.0,13.0
 Maryland,24025,Harford County,Central,Tenant Holding Over,2026-08-01,True,,,
-Maryland,24027,Howard County,Central,Failure to Pay Rent,2026-08-01,False,268,103.0,5.0
-Maryland,24027,Howard County,Central,Wrongful Detainer,2026-08-01,True,,,
-Maryland,24027,Howard County,Central,Tenant Holding Over,2026-08-01,True,,,
+Maryland,24025,Harford County,Central,Wrongful Detainer,2026-08-01,True,,,
 Maryland,24027,Howard County,Central,Breach of Lease,2026-08-01,True,,,
+Maryland,24027,Howard County,Central,Failure to Pay Rent,2026-08-01,False,268,103.0,
+Maryland,24027,Howard County,Central,Tenant Holding Over,2026-08-01,True,,,
+Maryland,24027,Howard County,Central,Wrongful Detainer,2026-08-01,True,,,
 Maryland,24029,Kent County,Eastern Shore,Failure to Pay Rent,2026-08-01,True,,,
-Maryland,24031,Montgomery County,Capital,Breach of Lease,2026-08-01,False,10,0.0,0.0
-Maryland,24031,Montgomery County,Capital,Wrongful Detainer,2026-08-01,False,10,5.0,3.0
+Maryland,24031,Montgomery County,Capital,Breach of Lease,2026-08-01,False,10,,
 Maryland,24031,Montgomery County,Capital,Failure to Pay Rent,2026-08-01,False,631,308.0,19.0
-Maryland,24031,Montgomery County,Capital,Tenant Holding Over,2026-08-01,False,15,4.0,0.0
-Maryland,24033,Prince George's County,Capital,Wrongful Detainer,2026-08-01,False,17,5.0,2.0
-Maryland,24033,Prince George's County,Capital,Tenant Holding Over,2026-08-01,False,38,11.0,3.0
-Maryland,24033,Prince George's County,Capital,Breach of Lease,2026-08-01,False,10,1.0,0.0
+Maryland,24031,Montgomery County,Capital,Tenant Holding Over,2026-08-01,False,15,,
+Maryland,24031,Montgomery County,Capital,Wrongful Detainer,2026-08-01,False,10,,
+Maryland,24033,Prince George's County,Capital,Breach of Lease,2026-08-01,False,10,,
 Maryland,24033,Prince George's County,Capital,Failure to Pay Rent,2026-08-01,False,1641,606.0,54.0
+Maryland,24033,Prince George's County,Capital,Tenant Holding Over,2026-08-01,False,38,11.0,
+Maryland,24033,Prince George's County,Capital,Wrongful Detainer,2026-08-01,False,17,,
 Maryland,24035,Queen Anne's County,Eastern Shore,Failure to Pay Rent,2026-08-01,True,,,
-Maryland,24039,Somerset County,Eastern Shore,Failure to Pay Rent,2026-08-01,False,14,12.0,3.0
+Maryland,24039,Somerset County,Eastern Shore,Failure to Pay Rent,2026-08-01,False,14,12.0,
 Maryland,24039,Somerset County,Eastern Shore,Tenant Holding Over,2026-08-01,True,,,
-Maryland,24037,St. Mary's County,Southern,Failure to Pay Rent,2026-08-01,False,58,44.0,6.0
 Maryland,24037,St. Mary's County,Southern,Breach of Lease,2026-08-01,True,,,
-Maryland,24037,St. Mary's County,Southern,Wrongful Detainer,2026-08-01,True,,,
+Maryland,24037,St. Mary's County,Southern,Failure to Pay Rent,2026-08-01,False,58,44.0,
 Maryland,24037,St. Mary's County,Southern,Tenant Holding Over,2026-08-01,True,,,
+Maryland,24037,St. Mary's County,Southern,Wrongful Detainer,2026-08-01,True,,,
 Maryland,24041,Talbot County,Eastern Shore,Failure to Pay Rent,2026-08-01,True,,,
-Maryland,24043,Washington County,Western,Public Housing FTPR,2026-08-01,False,11,11.0,1.0
-Maryland,24043,Washington County,Western,Failure to Pay Rent,2026-08-01,False,161,118.0,38.0
 Maryland,24043,Washington County,Western,Breach of Lease,2026-08-01,True,,,
-Maryland,24043,Washington County,Western,Wrongful Detainer,2026-08-01,True,,,
+Maryland,24043,Washington County,Western,Failure to Pay Rent,2026-08-01,False,161,118.0,38.0
+Maryland,24043,Washington County,Western,Public Housing FTPR,2026-08-01,False,11,11.0,
 Maryland,24043,Washington County,Western,Tenant Holding Over,2026-08-01,True,,,
-Maryland,24045,Wicomico County,Eastern Shore,Wrongful Detainer,2026-08-01,True,,,
+Maryland,24043,Washington County,Western,Wrongful Detainer,2026-08-01,True,,,
 Maryland,24045,Wicomico County,Eastern Shore,Failure to Pay Rent,2026-08-01,False,104,92.0,26.0
-Maryland,24047,Worcester County,Eastern Shore,Wrongful Detainer,2026-08-01,True,,,
+Maryland,24045,Wicomico County,Eastern Shore,Wrongful Detainer,2026-08-01,True,,,
 Maryland,24047,Worcester County,Eastern Shore,Failure to Pay Rent,2026-08-01,True,,,
-Maryland,24001,Allegany County,Western,Wrongful Detainer,2026-09-01,True,,,
-Maryland,24001,Allegany County,Western,Public Housing FTPR,2026-09-01,True,,,
+Maryland,24047,Worcester County,Eastern Shore,Wrongful Detainer,2026-08-01,True,,,
 Maryland,24001,Allegany County,Western,Breach of Lease,2026-09-01,True,,,
-Maryland,24001,Allegany County,Western,Failure to Pay Rent,2026-09-01,False,19,10.0,6.0
-Maryland,24003,Anne Arundel County,Central,Tenant Holding Over,2026-09-01,True,,,
-Maryland,24003,Anne Arundel County,Central,Failure to Pay Rent,2026-09-01,False,497,13.0,1.0
-Maryland,24003,Anne Arundel County,Central,Wrongful Detainer,2026-09-01,True,,,
+Maryland,24001,Allegany County,Western,Failure to Pay Rent,2026-09-01,False,19,10.0,
+Maryland,24001,Allegany County,Western,Public Housing FTPR,2026-09-01,True,,,
+Maryland,24001,Allegany County,Western,Wrongful Detainer,2026-09-01,True,,,
 Maryland,24003,Anne Arundel County,Central,Breach of Lease,2026-09-01,True,,,
-Maryland,24510,Baltimore City,Central,Wrongful Detainer,2026-09-01,False,44,0.0,0.0
-Maryland,24510,Baltimore City,Central,Breach of Lease,2026-09-01,False,10,0.0,0.0
-Maryland,24510,Baltimore City,Central,Public Housing FTPR,2026-09-01,False,175,0.0,0.0
-Maryland,24510,Baltimore City,Central,Failure to Pay Rent,2026-09-01,False,2599,0.0,0.0
-Maryland,24510,Baltimore City,Central,Tenant Holding Over,2026-09-01,False,34,0.0,0.0
+Maryland,24003,Anne Arundel County,Central,Failure to Pay Rent,2026-09-01,False,497,13.0,
+Maryland,24003,Anne Arundel County,Central,Tenant Holding Over,2026-09-01,True,,,
+Maryland,24003,Anne Arundel County,Central,Wrongful Detainer,2026-09-01,True,,,
+Maryland,24510,Baltimore City,Central,Breach of Lease,2026-09-01,False,10,,
+Maryland,24510,Baltimore City,Central,Failure to Pay Rent,2026-09-01,False,2599,,
+Maryland,24510,Baltimore City,Central,Public Housing FTPR,2026-09-01,False,175,,
+Maryland,24510,Baltimore City,Central,Tenant Holding Over,2026-09-01,False,34,,
+Maryland,24510,Baltimore City,Central,Wrongful Detainer,2026-09-01,False,44,,
+Maryland,24005,Baltimore County,Central,Breach of Lease,2026-09-01,False,10,,
 Maryland,24005,Baltimore County,Central,Failure to Pay Rent,2026-09-01,False,3042,199.0,45.0
-Maryland,24005,Baltimore County,Central,Wrongful Detainer,2026-09-01,False,24,0.0,0.0
-Maryland,24005,Baltimore County,Central,Breach of Lease,2026-09-01,False,10,1.0,1.0
-Maryland,24005,Baltimore County,Central,Tenant Holding Over,2026-09-01,False,17,0.0,0.0
+Maryland,24005,Baltimore County,Central,Tenant Holding Over,2026-09-01,False,17,,
+Maryland,24005,Baltimore County,Central,Wrongful Detainer,2026-09-01,False,24,,
+Maryland,24009,Calvert County,Southern,Failure to Pay Rent,2026-09-01,False,14,,
 Maryland,24009,Calvert County,Southern,Tenant Holding Over,2026-09-01,True,,,
 Maryland,24009,Calvert County,Southern,Wrongful Detainer,2026-09-01,True,,,
-Maryland,24009,Calvert County,Southern,Failure to Pay Rent,2026-09-01,False,14,3.0,2.0
 Maryland,24011,Caroline County,Eastern Shore,Failure to Pay Rent,2026-09-01,True,,,
-Maryland,24013,Carroll County,Central,Failure to Pay Rent,2026-09-01,False,12,5.0,2.0
+Maryland,24013,Carroll County,Central,Failure to Pay Rent,2026-09-01,False,12,,
 Maryland,24013,Carroll County,Central,Tenant Holding Over,2026-09-01,True,,,
+Maryland,24015,Cecil County,Eastern Shore,Failure to Pay Rent,2026-09-01,False,96,39.0,
 Maryland,24015,Cecil County,Eastern Shore,Tenant Holding Over,2026-09-01,True,,,
-Maryland,24015,Cecil County,Eastern Shore,Failure to Pay Rent,2026-09-01,False,96,39.0,9.0
 Maryland,24015,Cecil County,Eastern Shore,Wrongful Detainer,2026-09-01,True,,,
+Maryland,24017,Charles County,Southern,Failure to Pay Rent,2026-09-01,False,120,19.0,
 Maryland,24017,Charles County,Southern,Tenant Holding Over,2026-09-01,True,,,
 Maryland,24017,Charles County,Southern,Wrongful Detainer,2026-09-01,True,,,
-Maryland,24017,Charles County,Southern,Failure to Pay Rent,2026-09-01,False,120,19.0,5.0
+Maryland,24019,Dorchester County,Eastern Shore,Failure to Pay Rent,2026-09-01,False,31,,
 Maryland,24019,Dorchester County,Eastern Shore,Tenant Holding Over,2026-09-01,True,,,
-Maryland,24019,Dorchester County,Eastern Shore,Failure to Pay Rent,2026-09-01,False,31,2.0,0.0
-Maryland,24021,Frederick County,Central,Wrongful Detainer,2026-09-01,True,,,
-Maryland,24021,Frederick County,Central,Failure to Pay Rent,2026-09-01,False,120,25.0,5.0
+Maryland,24021,Frederick County,Central,Failure to Pay Rent,2026-09-01,False,120,25.0,
 Maryland,24021,Frederick County,Central,Tenant Holding Over,2026-09-01,True,,,
+Maryland,24021,Frederick County,Central,Wrongful Detainer,2026-09-01,True,,,
 Maryland,24023,Garrett County,Western,Failure to Pay Rent,2026-09-01,True,,,
-Maryland,24025,Harford County,Central,Wrongful Detainer,2026-09-01,True,,,
-Maryland,24025,Harford County,Central,Failure to Pay Rent,2026-09-01,False,205,16.0,0.0
 Maryland,24025,Harford County,Central,Breach of Lease,2026-09-01,True,,,
-Maryland,24027,Howard County,Central,Tenant Holding Over,2026-09-01,True,,,
+Maryland,24025,Harford County,Central,Failure to Pay Rent,2026-09-01,False,205,16.0,
+Maryland,24025,Harford County,Central,Wrongful Detainer,2026-09-01,True,,,
 Maryland,24027,Howard County,Central,Breach of Lease,2026-09-01,True,,,
+Maryland,24027,Howard County,Central,Failure to Pay Rent,2026-09-01,False,336,39.0,
+Maryland,24027,Howard County,Central,Tenant Holding Over,2026-09-01,True,,,
 Maryland,24027,Howard County,Central,Wrongful Detainer,2026-09-01,True,,,
-Maryland,24027,Howard County,Central,Failure to Pay Rent,2026-09-01,False,336,39.0,2.0
 Maryland,24029,Kent County,Eastern Shore,Failure to Pay Rent,2026-09-01,True,,,
-Maryland,24031,Montgomery County,Capital,Failure to Pay Rent,2026-09-01,False,530,7.0,0.0
 Maryland,24031,Montgomery County,Capital,Breach of Lease,2026-09-01,True,,,
-Maryland,24031,Montgomery County,Capital,Tenant Holding Over,2026-09-01,False,37,0.0,0.0
+Maryland,24031,Montgomery County,Capital,Failure to Pay Rent,2026-09-01,False,530,,
+Maryland,24031,Montgomery County,Capital,Tenant Holding Over,2026-09-01,False,37,,
 Maryland,24031,Montgomery County,Capital,Wrongful Detainer,2026-09-01,True,,,
-Maryland,24033,Prince George's County,Capital,Failure to Pay Rent,2026-09-01,False,1561,6.0,0.0
-Maryland,24033,Prince George's County,Capital,Wrongful Detainer,2026-09-01,False,17,0.0,0.0
 Maryland,24033,Prince George's County,Capital,Breach of Lease,2026-09-01,True,,,
-Maryland,24033,Prince George's County,Capital,Tenant Holding Over,2026-09-01,False,38,1.0,0.0
+Maryland,24033,Prince George's County,Capital,Failure to Pay Rent,2026-09-01,False,1561,,
+Maryland,24033,Prince George's County,Capital,Tenant Holding Over,2026-09-01,False,38,,
+Maryland,24033,Prince George's County,Capital,Wrongful Detainer,2026-09-01,False,17,,
 Maryland,24035,Queen Anne's County,Eastern Shore,Failure to Pay Rent,2026-09-01,True,,,
 Maryland,24035,Queen Anne's County,Eastern Shore,Tenant Holding Over,2026-09-01,True,,,
+Maryland,24039,Somerset County,Eastern Shore,Failure to Pay Rent,2026-09-01,True,,,
 Maryland,24039,Somerset County,Eastern Shore,Tenant Holding Over,2026-09-01,True,,,
 Maryland,24039,Somerset County,Eastern Shore,Wrongful Detainer,2026-09-01,True,,,
-Maryland,24039,Somerset County,Eastern Shore,Failure to Pay Rent,2026-09-01,True,,,
-Maryland,24037,St. Mary's County,Southern,Wrongful Detainer,2026-09-01,True,,,
-Maryland,24037,St. Mary's County,Southern,Tenant Holding Over,2026-09-01,True,,,
+Maryland,24037,St. Mary's County,Southern,Failure to Pay Rent,2026-09-01,False,31,,
 Maryland,24037,St. Mary's County,Southern,Public Housing FTPR,2026-09-01,True,,,
-Maryland,24037,St. Mary's County,Southern,Failure to Pay Rent,2026-09-01,False,31,2.0,1.0
+Maryland,24037,St. Mary's County,Southern,Tenant Holding Over,2026-09-01,True,,,
+Maryland,24037,St. Mary's County,Southern,Wrongful Detainer,2026-09-01,True,,,
 Maryland,24041,Talbot County,Eastern Shore,Failure to Pay Rent,2026-09-01,True,,,
+Maryland,24043,Washington County,Western,Breach of Lease,2026-09-01,True,,,
+Maryland,24043,Washington County,Western,Failure to Pay Rent,2026-09-01,False,151,,
 Maryland,24043,Washington County,Western,Tenant Holding Over,2026-09-01,True,,,
 Maryland,24043,Washington County,Western,Wrongful Detainer,2026-09-01,True,,,
-Maryland,24043,Washington County,Western,Failure to Pay Rent,2026-09-01,False,151,9.0,4.0
-Maryland,24043,Washington County,Western,Breach of Lease,2026-09-01,True,,,
-Maryland,24045,Wicomico County,Eastern Shore,Failure to Pay Rent,2026-09-01,False,119,21.0,3.0
-Maryland,24045,Wicomico County,Eastern Shore,Wrongful Detainer,2026-09-01,True,,,
+Maryland,24045,Wicomico County,Eastern Shore,Failure to Pay Rent,2026-09-01,False,119,21.0,
 Maryland,24045,Wicomico County,Eastern Shore,Tenant Holding Over,2026-09-01,True,,,
-Maryland,24047,Worcester County,Eastern Shore,Wrongful Detainer,2026-09-01,True,,,
-Maryland,24047,Worcester County,Eastern Shore,Failure to Pay Rent,2026-09-01,True,,,
+Maryland,24045,Wicomico County,Eastern Shore,Wrongful Detainer,2026-09-01,True,,,
 Maryland,24047,Worcester County,Eastern Shore,Breach of Lease,2026-09-01,True,,,
+Maryland,24047,Worcester County,Eastern Shore,Failure to Pay Rent,2026-09-01,True,,,
 Maryland,24047,Worcester County,Eastern Shore,Tenant Holding Over,2026-09-01,True,,,
+Maryland,24047,Worcester County,Eastern Shore,Wrongful Detainer,2026-09-01,True,,,

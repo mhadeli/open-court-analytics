@@ -36,15 +36,19 @@ def verify_governance_and_qa(con: duckdb.DuckDBPyConnection) -> None:
     assert not leaked, f"PII governance violation: {leaked} exposed in v_analyst_cases!"
 
     # 3. Zero unsuppressed small cells (< 10 cases) in public views
-    for view_name, count_col in [
-        ("v_public_county_summary", "total_cases"),
-        ("v_public_county_overall", "total_cases"),
-        ("v_public_monthly_trends", "filings_count"),
+    county_counts = ["total_cases", "closed_cases", "evicted_cases"]
+    for view_name, count_cols in [
+        ("v_public_county_summary", county_counts),
+        ("v_public_county_overall", county_counts),
+        ("v_public_monthly_trends", ["filings_count", "dispositions_count", "evictions_count"]),
     ]:
-        bad_cells = con.execute(
-            f"SELECT COUNT(*) FROM {view_name} WHERE {count_col} IS NOT NULL AND {count_col} < 10"
-        ).fetchone()[0]
-        assert bad_cells == 0, f"Small-cell suppression violation in {view_name}: {bad_cells} cells"
+        for count_col in count_cols:
+            bad_cells = con.execute(
+                f"SELECT COUNT(*) FROM {view_name} WHERE {count_col} < 10"
+            ).fetchone()[0]
+            assert bad_cells == 0, (
+                f"Small-cell suppression violation in {view_name}.{count_col}: {bad_cells} cells"
+            )
 
     # 4. Zero impossible timelines in v_analyst_cases
     bad_dates = con.execute(

@@ -32,7 +32,7 @@ Even within a single state publishing through a unified open-data feed (`mvqb-b4
 
 ## 2. Privacy & Re-Identification Controls
 * Downstream analytics query **only** `v_analyst_cases` (salted SHA-256 `case_id_hash`, raw city/5-digit ZIP removed, coarsened to 3-digit `tenant_zip3`).
-* Public county and monthly exports enforce **small-cell suppression (`< 10` cases)**, automatically suppressing 38 county-category cells and Garrett County's closed-case median (`n_closed = 7`).
+* Public county and monthly exports enforce **small-cell suppression (`< 10` cases)** on every published count and any rate built from it, removing 38 county-category rows and hiding Garrett County's closed and eviction figures. Not yet handled: complementary suppression (recovering a hidden category cell by subtracting the others from a county total).
 * In production deployments with non-public court records, **sealed, expunged, juvenile, and domestic-violence dockets** must be stripped upstream prior to warehouse ingestion and never transmitted to external commercial LLM APIs.
 
 ---

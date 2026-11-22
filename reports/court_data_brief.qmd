@@ -37,7 +37,7 @@ Using **100,000 public Maryland District Court eviction event records** (Apr–S
 
 ![Maryland County Time-to-Resolution and Eviction Execution Map](../outputs/county_bottlenecks_map.png)
 
-* **Privacy Governance:** All public county and monthly aggregates enforce **small-cell suppression (`< 10` cases)**. Garrett County (`n_closed = 7`) is automatically suppressed on closed-case duration metrics, alongside 38 county-by-category cells statewide.
+* **Privacy Governance:** All public county and monthly aggregates enforce **small-cell suppression (`< 10` cases)** on every published count and any rate built from it. This removes 38 county-by-category rows statewide and hides Garrett County's closed and eviction figures.
 * **Interactive Dashboard:** Suppressed public aggregates are exported to `outputs/tableau/court_dashboard.hyper` (and CSV fallbacks) for Tableau Public following `outputs/tableau/dashboard_spec.md`.
 
 ---
