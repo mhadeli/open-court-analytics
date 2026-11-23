@@ -126,6 +126,9 @@ open-court-analytics/
 │   ├── court_data_brief.qmd                    # Phase 4: 2-page Quarto executive brief source
 │   └── render_brief_html.py                    # Generates the interactive 5-tab dashboard -> docs/index.html
 │
+├── notebooks/
+│   └── eda.ipynb                               # Interactive Plotly EDA: raw -> warehouse -> gold set -> modeling takeaways
+│
 └── docs/
     ├── index.html                              # GitHub Pages entry point for the 5-tab interactive dashboard
     ├── AI_EVALUATION_SCORECARD.md              # 1-page non-technical Green/Yellow/Red AI deployment scorecard
