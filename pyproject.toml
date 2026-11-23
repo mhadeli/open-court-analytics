@@ -20,6 +20,9 @@ dependencies = [
     "ipykernel>=6.29.0",
     "en-core-web-sm",
     "google-genai>=3.6.1",
+    "plotly>=7.1.0",
+    "nbformat>=5.11.1",
+    "kaleido>=1.5.2",
 ]
 
 [dependency-groups]
